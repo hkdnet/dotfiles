@@ -1,6 +1,12 @@
 # dotifles
 
-## zsh
+## 基本方針
 
-更新時は `./zshfiles_update` を実行
+変更時はそのままファイルをいじる
+更新時は `./update` を実行
 差分があるかないかはgitで管理
+
+## 管理対象
+
+- git
+- zsh
