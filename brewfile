@@ -2,12 +2,14 @@
 brew install jq
 brew install zsh
 brew install git
+brew install tig
 brew install hub
 brew install ghq
 brew install peco
 brew install pstree
 brew install htop
 brew install tmux
+brew install reattach-to-user-namespace 
 
 brew tap caskroom/cask
 brew install brew-cask
