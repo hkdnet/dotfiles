@@ -1,8 +1,0 @@
-#!/bin/bash
-
-script_dir=$(cd $(dirname $0); pwd)
-
-set -e
-
-./update_gitfiles
-./update_zshfiles

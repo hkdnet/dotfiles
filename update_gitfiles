@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative './updater.rb'
-
-Updater.new(
-  "#{ENV['HOME']}/",
-  %w(.gitconfig .gitignore),
-  'git'
-).run

@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative './updater.rb'
-
-Updater.new(
-  "#{ENV['HOME']}/.zprezto/runcoms/",
-  %w(zshrc zprofile zlogin zlogout zshenv),
-  'zsh'
-).run

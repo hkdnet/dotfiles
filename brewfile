@@ -1,0 +1,23 @@
+#!/bin/bash
+brew install jq
+brew install zsh
+brew install git
+brew install hub
+brew install ghq
+brew install peco
+brew install pstree
+brew install htop
+brew install tmux
+
+brew tap caskroom/cask
+brew install brew-cask
+brew cask install google-chrome
+brew cask install google-japanese-ime
+brew cask install iterm2
+brew cask install alfred
+brew cask install slack
+brew cask install vagrant
+brew cask install virtualbox
+brew cask install atom
+brew cask install skitch
+brew cask install sequel-pro

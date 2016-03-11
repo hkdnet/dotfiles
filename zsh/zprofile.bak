@@ -1,4 +1,0 @@
-PATH=/usr/local/bin:/Users/yyy/links:"$PATH"
-PATH="$PATH":/Users/yyy/.nvm/v0.10.26/bin:Users/yyy/.rbenv/versions/2.2.2/bin
-source ~/.nvm/nvm.sh
-export PATH
