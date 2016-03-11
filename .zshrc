@@ -39,6 +39,7 @@ function c() {
     [[ -z $dir ]] || cd $dir
   fi
 }
+
 #
 # golang
 #
@@ -49,6 +50,11 @@ export PATH=$PATH:$GOPATH/bin
 # gem
 #
 export BUNDLER_EDITOR=atom
+
+#
+# tmux
+#
+alias ta='tmux a -t $(tmux ls -F "#S" | peco)'
 
 #
 # secrets
