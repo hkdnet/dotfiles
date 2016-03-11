@@ -26,7 +26,7 @@ eval "$(hub alias -s)"
 #
 # gcd
 #
-function gcd() {
+function c() {
   cd $(ghq list -p | peco)
 }
 
