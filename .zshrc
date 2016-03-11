@@ -27,9 +27,18 @@ eval "$(hub alias -s)"
 # gcd
 #
 function c() {
-  cd $(ghq list -p | peco)
+  local dirs lc dir
+  dirs=$(ghq list -p)
+  # ghqのlistはignore caseのオプションがなさそうなので
+  [[ -z $1 ]] || dirs=$(echo $dirs | grep -i $1)
+  lc=$(echo $dirs | wc -l | tr -d '[[:space:]]')
+  if [[ $lc == '1' ]] ; then
+    cd ${dirs}
+  else
+    dir=$(echo $dirs | peco)
+    [[ -z $dir ]] || cd $dir
+  fi
 }
-
 #
 # golang
 #
@@ -45,3 +54,4 @@ export BUNDLER_EDITOR=atom
 # secrets
 #
 source $HOME/.secrets
+
