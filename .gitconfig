@@ -27,17 +27,17 @@
 	po  = push origin
 	c   = commit -v
 	# diff関連
-	ci = diff
-	cm = diff master           # masterとのdiff
-	cw = diff --color-words    # 単語単位でいろつけてdiff
-	cc = diff --cached         # addされているものとのdiff
-	cs = diff --staged         # 同上(1.6.1移行)
-	c1 = diff HEAD~            # HEADから1つ前とdiff
-	c2 = diff HEAD~~           # HEADから2つ前とdiff
-	c3 = diff HEAD~~~          # HEADから3つ前とdiff
-	c4 = diff HEAD~~~~         # HEADから4つ前とdiff
-	c5 = diff HEAD~~~~~        # HEADから5つ前とdiff
-	c10 = diff HEAD~~~~~~~~~~  # HEADから10前とdiff
+	di = diff
+	dm = diff master           # masterとのdiff
+	dw = diff --color-words    # 単語単位でいろつけてdiff
+	dc = diff --cached         # addされているものとのdiff
+	ds = diff --staged         # 同上(1.6.1移行)
+	d1 = diff HEAD~            # HEADから1つ前とdiff
+	d2 = diff HEAD~~           # HEADから2つ前とdiff
+	d3 = diff HEAD~~~          # HEADから3つ前とdiff
+	d4 = diff HEAD~~~~         # HEADから4つ前とdiff
+	d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
+	d10 = diff HEAD~~~~~~~~~~  # HEADから10前とdiff
 	# logをtree表示
 	log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
 	log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
