@@ -23,3 +23,4 @@ brew cask install virtualbox
 brew cask install atom
 brew cask install skitch
 brew cask install sequel-pro
+brew cask install karabiner
