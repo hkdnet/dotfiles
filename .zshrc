@@ -12,6 +12,10 @@ fi
 
 # Customize to your needs...
 
+# unique path
+typeset -U path PATH
+typeset -U fpath FPATH
+
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
