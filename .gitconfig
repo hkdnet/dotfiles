@@ -6,6 +6,7 @@
 [core]
 	excludesfile = ~/.gitignore  # globalな.gitignoreの指定
 	editor = vim
+	pager=less -r
 [merge]
 	ff = false
 [color]
