@@ -1,1 +1,2 @@
-source ./.vimrc.basic
+source ~/.vimrc.basic
+source ~/.vimrc.indent
