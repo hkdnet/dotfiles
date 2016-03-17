@@ -1,0 +1,66 @@
+
+"-------------------------------------------------------------------------------
+"" 基本設定 Basics
+"-------------------------------------------------------------------------------
+let mapleader = "Space"          " キーマップリーダー
+set scrolloff=5                  " スクロール時の余白確保
+set textwidth=0                  " 一行に長い文章を書いていても自動折り返しをしない
+set nobackup                     " バックアップ取らない
+set autoread                     " 他で書き換えられたら自動で読み直す
+set noswapfile                   " スワップファイル作らない
+set hidden                       " 編集中でも他のファイルを開けるようにする
+set backspace=indent,eol,start   " バックスペースでなんでも消せるように
+set formatoptions=lmoq           " テキスト整形オプション，マルチバイト系を追加
+set vb t_vb=                     " ビープをならさない
+set browsedir=buffer             " Exploreの初期ディレクトリ
+set whichwrap=b,s,h,l,<,>,[,]    " カーソルを行頭、行末で止まらないようにする
+set showcmd                      " コマンドをステータス行に表示
+set showmode                     " 現在のモードを表示
+set viminfo='50,<1000,s100,\"50  " viminfoファイルの設定
+set modelines=0                  " モードラインは無効
+set number                       " 行番号を表示
+set list                         " 不可視文字の表示
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set notitle                      " vimを使ってくれてありがとう
+" ターミナルでマウスを使用できるようにする
+set mouse=a
+set guioptions+=a
+set ttymouse=xterm2
+
+" ヤンクした文字は、システムのクリップボードに入れる
+set clipboard=unnamed
+
+" vim-plug(plugin manager)
+if has('vim_starting')
+ set rtp+=~/.vim/plugged/vim-plug
+ if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+   echo 'install vim-plug...'
+   call system('mkdir -p ~/.vim/plugged/vim-plug')
+   call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+ end
+endif
+
+call plug#begin('~/.vim/plugged')
+ Plug 'junegunn/vim-plug',
+       \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+ " https://github.com/pangloss/vim-javascript
+ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+ " https://github.com/myhere/vim-nodejs-complete
+ Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
+ Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+
+
+" insertモードから抜ける
+inoremap <silent> jj <ESC>
+
+" 行頭・行末移動方向をキーの相対位置にあわせる
+"
+nnoremap 0 $ 
+nnoremap 1 0
+
+" 挿入モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>

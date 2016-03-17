@@ -13,6 +13,9 @@ files=(
   .zprofile
   .zshenv
   .zshrc
+  .vimrc
+  .vimrc.basic
+  .vimrc.indent
 )
 for file in ${files[@]}; do
   ln -sf ${script_dir}/${file} ~/${file}
