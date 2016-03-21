@@ -57,6 +57,7 @@ function c() {
 # golang
 #
 export GOPATH=$HOME/.go
+export GOENVHOME=$HOME/.goenvs
 export PATH=$PATH:$GOPATH/bin
 
 #
