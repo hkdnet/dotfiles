@@ -74,3 +74,7 @@ alias ta='tmux a -t $(tmux ls -F "#S" | peco)'
 #
 source $HOME/.secrets
 
+#
+# local bin
+#
+export PATH=$PATH:$HOME/bin
