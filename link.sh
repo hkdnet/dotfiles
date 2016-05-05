@@ -16,6 +16,7 @@ files=(
   .vimrc
   .vimrc.basic
   .vimrc.indent
+  .vimrc.lang
 )
 for file in ${files[@]}; do
   ln -sf ${script_dir}/${file} ~/${file}

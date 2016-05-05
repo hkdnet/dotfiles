@@ -48,6 +48,10 @@ call plug#begin('~/.vim/plugged')
  " https://github.com/myhere/vim-nodejs-complete
  Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
  Plug 'christoomey/vim-tmux-navigator'
+ Plug 'wakatime/vim-wakatime'
+ Plug 'Shougo/unite.vim'
+ Plug 'Shougo/vimfiler'
+ Plug 'fatih/vim-go'
 call plug#end()
 
 
