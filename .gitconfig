@@ -8,8 +8,6 @@
 	editor = vim
 	pager=less -r
 	autocrlf = input
-[merge]
-	ff = false
 [color]
 	ui = true
 	status = auto
