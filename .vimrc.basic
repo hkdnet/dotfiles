@@ -2,7 +2,8 @@
 "-------------------------------------------------------------------------------
 "" 基本設定 Basics
 "-------------------------------------------------------------------------------
-let mapleader = "Space"          " キーマップリーダー
+let mapleader = ","
+noremap \  ,
 set scrolloff=5                  " スクロール時の余白確保
 set textwidth=0                  " 一行に長い文章を書いていても自動折り返しをしない
 set nobackup                     " バックアップ取らない
@@ -43,15 +44,14 @@ endif
 call plug#begin('~/.vim/plugged')
  Plug 'junegunn/vim-plug',
        \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
- " https://github.com/pangloss/vim-javascript
- Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
- " https://github.com/myhere/vim-nodejs-complete
- Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
  Plug 'christoomey/vim-tmux-navigator'
  Plug 'wakatime/vim-wakatime'
  Plug 'Shougo/unite.vim'
  Plug 'Shougo/vimfiler'
- Plug 'fatih/vim-go'
+ Plug 'fatih/vim-go', { 'for': 'go' }
+ Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
+ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+ Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 call plug#end()
 
 
@@ -68,3 +68,9 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+
+" ミス防止
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q <Nop>
+
