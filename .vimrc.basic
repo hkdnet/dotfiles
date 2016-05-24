@@ -52,6 +52,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
  Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
  Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
+ Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 call plug#end()
 
 
