@@ -9,6 +9,7 @@ brew install peco
 brew install pstree
 brew install htop
 brew install tmux
+brew install neovim/neovim/neovim
 brew install reattach-to-user-namespace 
 
 brew tap caskroom/cask

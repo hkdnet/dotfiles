@@ -21,3 +21,6 @@ files=(
 for file in ${files[@]}; do
   ln -sf ${script_dir}/${file} ~/${file}
 done
+
+ln -s ~/.vim   ~/.config/nvim/
+ln -s ~/.vimrc ~/.config/nvim/init.vim

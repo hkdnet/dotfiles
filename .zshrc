@@ -79,3 +79,6 @@ source $HOME/.secrets
 # local bin
 #
 export PATH=$PATH:$HOME/bin
+
+# nvim
+export XDG_CONFIG_HOME=$HOME/.config

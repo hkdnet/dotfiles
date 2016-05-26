@@ -26,7 +26,9 @@ set notitle                      " vimを使ってくれてありがとう
 " ターミナルでマウスを使用できるようにする
 set mouse=a
 set guioptions+=a
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 " ヤンクした文字は、システムのクリップボードに入れる
 set clipboard=unnamed
@@ -54,6 +56,11 @@ call plug#begin('~/.vim/plugged')
  Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
  Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
  Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
+ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+ Plug 'kannokanno/previm', { 'for': 'markdown' }
+ Plug 'tyru/open-browser.vim'
+ Plug 'Shougo/vimproc.vim'
+ Plug 'https://github.com/kmnk/vim-unite-giti.git'
 call plug#end()
 
 
@@ -76,3 +83,14 @@ nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 
+" unite
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> <Leader>t  :<C-u>Unite file_rec/async:!<CR>
+nnoremap <silent> <Leader>g  :<C-u>Unite giti<CR>
+nnoremap <silent> <Leader>s  :<C-u>Unite giti/status<CR>
+" colors
+if has("nvim")
+  set termguicolors
+endif
