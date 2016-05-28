@@ -16,7 +16,6 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
-
 " --------------------------------
 " php
 " --------------------------------
@@ -27,11 +26,10 @@ let php_baselib = 1
 let php_noShortTags = 1
 " カッコが閉じていない場合にハイライト
 let php_parent_error_close = 1
+let g:syntastic_php_checkers = ['phpcs']
+let g:syntastic_php_phpcs_args= '--standard=psr2 --encoding=utf-8'
 
 " --------------------------------
 " ruby
 " --------------------------------
-" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
-" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']

@@ -64,6 +64,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'aereal/vim-colors-japanesque'
  Plug 'Shougo/neomru.vim'
  Plug 'scrooloose/syntastic'
+ Plug 'thinca/vim-ref'
+ Plug 'yuku-t/vim-ref-ri'
 call plug#end()
 
 colorscheme japanesque
