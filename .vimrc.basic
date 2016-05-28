@@ -66,6 +66,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'scrooloose/syntastic'
  Plug 'thinca/vim-ref'
  Plug 'yuku-t/vim-ref-ri'
+ Plug 'tpope/vim-endwise'
 call plug#end()
 
 colorscheme japanesque
