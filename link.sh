@@ -15,6 +15,7 @@ files=(
   .zshrc
   .vimrc
   .vimrc.basic
+  .vimrc.plug
   .vimrc.indent
   .vimrc.lang
 )

@@ -1,0 +1,67 @@
+" --------------------------------
+" syntastic
+" --------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" --------------------------------
+" vim-php-cs-fixer
+" --------------------------------
+let g:php_cs_fixer_level = "psr2"                 " which level ?
+let g:php_cs_fixer_config = "default"             " configuration
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+" If you want to define specific fixers:
+"let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+
+" --------------------------------
+" unite
+" --------------------------------
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> <Leader>g  :<C-u>Unite giti<CR>
+nnoremap <silent> <Leader>s  :<C-u>Unite giti/status<CR>
+nnoremap    [unite]   <Nop>
+nmap    <Leader>f [unite]
+let s:unite_ignore_file_rec_patterns=
+      \ ''
+      \ .'vendor/bundle\|.bundle/\|\.sass-cache/\|'
+      \ .'node_modules/\|bower_components/\|'
+      \ .'\.\(bmp\|gif\|jpe\?g\|png\|webp\|ai\|psd\)"\?$'
+
+call unite#custom#source(
+      \ 'file_rec/async,file_rec/git',
+      \ 'ignore_pattern',
+      \ s:unite_ignore_file_rec_patterns)
+
+" 全部乗せ
+nnoremap <silent> [unite]a  :<C-u>UniteWithCurrentDir -no-split -no-resize -start-insert -buffer-name=files buffer file_mru bookmark file<CR>
+" ファイル一覧
+nnoremap <silent> [unite]f  :<C-u>Unite -no-split -no-resize -start-insert -buffer-name=files file<CR>
+" バッファ一覧
+nnoremap <silent> [unite]b  :<C-u>Unite -no-split -no-resize -start-insert buffer<CR>
+" 常用セット
+nnoremap <silent> [unite]u  :<C-u>Unite -no-split -no-resize -start-insert buffer file_mru<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> [unite]m  :<C-u>Unite -no-split -no-resize -start-insert file_mru<CR>
+" 現在のバッファのカレントディレクトリからファイル一覧
+nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split -no-resize -start-insert file<CR>
+" カレントディレクトリから再帰
+nnoremap <silent> [unite]t  :<C-u>execute
+      \ 'Unite'
+      \ '-start-insert'
+      \ 'buffer file_mru'
+      \ 'file:'.fnameescape(expand('%:p:h'))
+      \ (isdirectory(getcwd().'/.git') ?
+      \      'file_rec/git:--cached:--others:--exclude-standard' :
+      \      'file_rec/async')
+      \ <CR>
+
