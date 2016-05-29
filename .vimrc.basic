@@ -69,6 +69,11 @@ call plug#begin('~/.vim/plugged')
  Plug 'yuku-t/vim-ref-ri'
  Plug 'tpope/vim-endwise'
  Plug 'szw/vim-tags'
+ Plug 'basyura/unite-rails', { 'for': 'ruby' }
+ Plug 'tpope/vim-rails', { 'for': 'ruby' }
+ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
+ Plug 'mattn/emmet-vim', { 'for': 'html' }
 call plug#end()
 
 colorscheme japanesque

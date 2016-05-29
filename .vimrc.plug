@@ -7,12 +7,13 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = {
-  \ 'mode': 'active',
+  \ 'mode': 'passive',
   \ 'active_filetypes': ['php', 'ruby', 'go']
   \}
+let g:syntastic_html_tidy_ignore_errors = ['trimming empty <i>']
 
 " --------------------------------
 " vim-php-cs-fixer
@@ -31,6 +32,12 @@ let g:php_cs_fixer_verbose = 0                    " Return the output of command
 " --------------------------------
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
+" Use 'ag' instead of 'grep' if available
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 nnoremap <silent> <Leader>g  :<C-u>Unite giti<CR>
 nnoremap <silent> <Leader>s  :<C-u>Unite giti/status<CR>
 nnoremap    [unite]   <Nop>
@@ -58,6 +65,8 @@ nnoremap <silent> [unite]u  :<C-u>Unite -no-split -no-resize -start-insert buffe
 nnoremap <silent> [unite]m  :<C-u>Unite -no-split -no-resize -start-insert file_mru<CR>
 " 現在のバッファのカレントディレクトリからファイル一覧
 nnoremap <silent> [unite]d  :<C-u>UniteWithBufferDir -no-split -no-resize -start-insert file<CR>
+" grep
+nnoremap <silent> [unite]gp :<C-u>call<Space><SID>unite_do_in_project('grep:')<Return>
 " カレントディレクトリから再帰
 nnoremap <silent> [unite]t  :<C-u>execute
       \ 'Unite'
@@ -69,3 +78,24 @@ nnoremap <silent> [unite]t  :<C-u>execute
       \      'file_rec/async')
       \ <CR>
 
+" --------------------------------
+" unite-rails
+" --------------------------------
+nnoremap [rails] <Nop>
+nmap     <Leader>r [rails]
+nnoremap [rails]r :Unite<Space>rails/
+nnoremap <silent> [rails]m :<C-u>Unite<Space>rails/model<Return>
+nnoremap <silent> [rails]c :<C-u>Unite<Space>rails/controller<Return>
+nnoremap <silent> [rails]v :<C-u>Unite<Space>rails/view<Return>
+nnoremap <silent> [rails]h :<C-u>Unite<Space>rails/helper<Return>
+
+" --------------------------------
+" NERDTreeToggle
+" --------------------------------
+nnoremap <silent> <Leader>nt :<C-u>NERDTreeToggle<Return>
+
+" --------------------------------
+" vim-markdown
+" --------------------------------
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
