@@ -34,7 +34,7 @@ let g:unite_source_file_mru_limit = 200
 nnoremap <silent> <Leader>g  :<C-u>Unite giti<CR>
 nnoremap <silent> <Leader>s  :<C-u>Unite giti/status<CR>
 nnoremap    [unite]   <Nop>
-nmap    <Leader>f [unite]
+nmap    <Leader>u [unite]
 let s:unite_ignore_file_rec_patterns=
       \ ''
       \ .'vendor/bundle\|.bundle/\|\.sass-cache/\|'
