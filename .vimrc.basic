@@ -1,4 +1,3 @@
-
 " --------------------------------
 " 基本設定 Basics
 " --------------------------------
@@ -45,35 +44,46 @@ if has('vim_starting')
 endif
 
 call plug#begin('~/.vim/plugged')
+ " basic
  Plug 'junegunn/vim-plug',
        \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
  Plug 'christoomey/vim-tmux-navigator'
  Plug 'wakatime/vim-wakatime'
- Plug 'Shougo/unite.vim'
  Plug 'Shougo/vimfiler'
- Plug 'fatih/vim-go', { 'for': 'go' }
- Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
- Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
- Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
- Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
- Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
- Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
- Plug 'kannokanno/previm', { 'for': 'markdown' }
  Plug 'tyru/open-browser.vim'
- Plug 'Shougo/vimproc.vim'
- Plug 'https://github.com/kmnk/vim-unite-giti.git'
  Plug 'aereal/vim-colors-japanesque'
+ Plug 'szw/vim-tags'
+ " unite
+ Plug 'Shougo/unite.vim'
+ Plug 'Shougo/vimproc.vim'
+ Plug 'kmnk/vim-unite-giti'
  Plug 'Shougo/neomru.vim'
  Plug 'scrooloose/syntastic'
  Plug 'thinca/vim-ref'
- Plug 'yuku-t/vim-ref-ri'
- Plug 'tpope/vim-endwise'
- Plug 'szw/vim-tags'
+
+ " golang
+ Plug 'fatih/vim-go', { 'for': 'go' }
+ " php
+ Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
+ " Dockerfile
+ Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+ " crystal
+ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
+ " markdown
+ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+ Plug 'kannokanno/previm', { 'for': 'markdown' }
+ " ruby
+ Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+ Plug 'yuku-t/vim-ref-ri', { 'for': 'ruby' }
  Plug 'basyura/unite-rails', { 'for': 'ruby' }
  Plug 'tpope/vim-rails', { 'for': 'ruby' }
- Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
  Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
  Plug 'mattn/emmet-vim', { 'for': 'html' }
+ " javascript
+ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+ Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
+ Plug 'mxw/vim-jsx', { 'for': 'javascript '}
 call plug#end()
 
 colorscheme japanesque
@@ -98,7 +108,7 @@ nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 
 " colors
-if has("nvim")
+if exists('+termguicolors')
   set termguicolors
 endif
 
