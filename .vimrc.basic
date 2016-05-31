@@ -52,8 +52,14 @@ call plug#begin('~/.vim/plugged')
  Plug 'wakatime/vim-wakatime'
  Plug 'Shougo/vimfiler'
  Plug 'tyru/open-browser.vim'
- Plug 'aereal/vim-colors-japanesque'
  Plug 'szw/vim-tags'
+ " colorscheme
+ Plug 'aereal/vim-colors-japanesque'
+ Plug 'freeo/vim-kalisi'
+ Plug 'mhartington/oceanic-next'
+ Plug 'tomasr/molokai'
+ Plug 'sjl/badwolf'
+ Plug 'altercation/vim-colors-solarized'
  " unite
  Plug 'Shougo/unite.vim'
  Plug 'Shougo/vimproc.vim'
@@ -88,7 +94,28 @@ call plug#begin('~/.vim/plugged')
  Plug 'pmsorhaindo/syntastic-local-eslint.vim', { 'for': 'javascript' }
 call plug#end()
 
-colorscheme japanesque
+" ---------------------
+" color: japanesque
+" ---------------------
+" colorscheme japanesque
+" ---------------------
+" color: kalisi
+" ---------------------
+" colorscheme kalisi
+" syntax enable
+" set background=dark
+" set t_Co=256
+" let &t_AB="\e[48;5;%dm"
+" let &t_AF="\e[38;5;%dm"
+colorscheme molokai
+
+" ---------------------
+" color for OceanicNext
+" ---------------------
+" syntax enable
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" colorscheme OceanicNext
+" set background=dark
 
 " insertモードから抜ける
 inoremap <silent> jj <ESC>
@@ -108,9 +135,4 @@ inoremap <C-l> <Right>
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-
-" colors
-if exists('+termguicolors')
-  set termguicolors
-endif
 
