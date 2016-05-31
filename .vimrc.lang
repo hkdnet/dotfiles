@@ -38,6 +38,7 @@ let g:syntastic_ruby_checkers = ['rubocop']
 " javascript
 " --------------------------------
 au BufRead,BufNewFile *.tag :set filetype=javascript
+let g:syntastic_javascript_checkers=['eslint']
 " http://koturn.hatenablog.com/entry/2015/07/27/042519
 if executable('jq')
   function! s:jq(has_bang, ...) abort range

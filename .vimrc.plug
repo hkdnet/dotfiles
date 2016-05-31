@@ -11,7 +11,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = {
   \ 'mode': 'passive',
-  \ 'active_filetypes': ['php', 'ruby', 'go']
+  \ 'active_filetypes': ['php', 'ruby', 'go', 'javascript']
   \}
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty <i>']
 
@@ -101,3 +101,14 @@ nnoremap <silent> <Leader>nt :<C-u>NERDTreeToggle<Return>
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 
+
+" --------------------------------
+" quickrun
+" --------------------------------
+let g:quickrun_config={
+     \  '*': {
+     \    'split': ':botright',
+     \    "runner" : "vimproc",
+     \    "runner/vimproc/updatetime" : 100
+     \  }
+     \}

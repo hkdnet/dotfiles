@@ -78,12 +78,14 @@ call plug#begin('~/.vim/plugged')
  Plug 'yuku-t/vim-ref-ri', { 'for': 'ruby' }
  Plug 'basyura/unite-rails', { 'for': 'ruby' }
  Plug 'tpope/vim-rails', { 'for': 'ruby' }
+ Plug 'git@github.com:tpope/vim-bundler.git', { 'for': 'ruby' }
  Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
  Plug 'mattn/emmet-vim', { 'for': 'html' }
  " javascript
  Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
  Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
  Plug 'mxw/vim-jsx', { 'for': 'javascript '}
+ Plug 'pmsorhaindo/syntastic-local-eslint.vim', { 'for': 'javascript' }
 call plug#end()
 
 colorscheme japanesque
