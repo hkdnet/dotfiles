@@ -35,69 +35,73 @@ set clipboard=unnamed
 
 " vim-plug(plugin manager)
 if has('vim_starting')
- set rtp+=~/.vim/plugged/vim-plug
- if !isdirectory(expand('~/.vim/plugged/vim-plug'))
-   echo 'install vim-plug...'
-   call system('mkdir -p ~/.vim/plugged/vim-plug')
-   call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
- end
+  set rtp+=~/.vim/plugged/vim-plug
+  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+    echo 'install vim-plug...'
+    call system('mkdir -p ~/.vim/plugged/vim-plug')
+    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+  end
 endif
 
 call plug#begin('~/.vim/plugged')
- " basic
- Plug 'junegunn/vim-plug',
-       \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
- Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
- Plug 'christoomey/vim-tmux-navigator'
- Plug 'wakatime/vim-wakatime'
- Plug 'Shougo/vimfiler'
- Plug 'tyru/open-browser.vim'
- Plug 'szw/vim-tags'
- " colorscheme
- Plug 'aereal/vim-colors-japanesque'
- Plug 'freeo/vim-kalisi'
- Plug 'mhartington/oceanic-next'
- Plug 'tomasr/molokai'
- Plug 'sjl/badwolf'
- Plug 'altercation/vim-colors-solarized'
- " unite
- Plug 'Shougo/unite.vim'
- Plug 'Shougo/vimproc.vim'
- Plug 'kmnk/vim-unite-giti'
- Plug 'Shougo/neomru.vim'
- Plug 'scrooloose/syntastic'
- Plug 'thinca/vim-ref'
+" basic
+Plug 'junegunn/vim-plug',
+      \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'wakatime/vim-wakatime'
+Plug 'Shougo/vimfiler'
+Plug 'tyru/open-browser.vim'
+Plug 'szw/vim-tags'
+Plug 'scrooloose/syntastic'
+Plug 'thinca/vim-ref'
+Plug 'Shougo/neocomplete.vim'
+" colorscheme
+Plug 'aereal/vim-colors-japanesque'
+Plug 'freeo/vim-kalisi'
+Plug 'mhartington/oceanic-next'
+Plug 'tomasr/molokai'
+Plug 'sjl/badwolf'
+Plug 'altercation/vim-colors-solarized'
+" unite
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/unite-outline'
+Plug 'Shougo/vimproc.vim'
+Plug 'kmnk/vim-unite-giti'
+Plug 'Shougo/neomru.vim'
 
- " golang
- Plug 'fatih/vim-go', { 'for': 'go' }
- " php
- Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
- " Dockerfile
- Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
- " crystal
- Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
- " markdown
- Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
- Plug 'kannokanno/previm', { 'for': 'markdown' }
- " ruby
- Plug 'tpope/vim-endwise', { 'for': 'ruby' }
- Plug 'yuku-t/vim-ref-ri', { 'for': 'ruby' }
- Plug 'basyura/unite-rails', { 'for': 'ruby' }
- Plug 'tpope/vim-rails', { 'for': 'ruby' }
- Plug 'git@github.com:tpope/vim-bundler.git', { 'for': 'ruby' }
- Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
- Plug 'mattn/emmet-vim', { 'for': 'html' }
- " javascript
- Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
- Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
- Plug 'mxw/vim-jsx', { 'for': 'javascript '}
- Plug 'pmsorhaindo/syntastic-local-eslint.vim', { 'for': 'javascript' }
+" golang
+Plug 'fatih/vim-go', { 'for': 'go' }
+" php
+Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
+" Dockerfile
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+" crystal
+Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
+" markdown
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'kannokanno/previm', { 'for': 'markdown' }
+" ruby
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'yuku-t/vim-ref-ri', { 'for': 'ruby' }
+Plug 'basyura/unite-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'git@github.com:tpope/vim-bundler.git', { 'for': 'ruby' }
+Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
+Plug 'git@github.com:osyo-manga/vim-monster.git', { 'for': 'ruby' }
+" HTML
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+" javascript
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript '}
+Plug 'pmsorhaindo/syntastic-local-eslint.vim', { 'for': 'javascript' }
 call plug#end()
 
 " ---------------------
 " color: japanesque
 " ---------------------
-" colorscheme japanesque
+colorscheme japanesque
 " ---------------------
 " color: kalisi
 " ---------------------
@@ -107,7 +111,7 @@ call plug#end()
 " set t_Co=256
 " let &t_AB="\e[48;5;%dm"
 " let &t_AF="\e[38;5;%dm"
-colorscheme molokai
+" colorscheme molokai
 
 " ---------------------
 " color for OceanicNext
