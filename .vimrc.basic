@@ -54,8 +54,9 @@ Plug 'Shougo/vimfiler'
 Plug 'tyru/open-browser.vim'
 Plug 'szw/vim-tags'
 Plug 'scrooloose/syntastic'
-Plug 'thinca/vim-ref'
+Plug 'thinca/vim-ref' | Plug 'mojako/ref-sources.vim'
 Plug 'Shougo/neocomplete.vim'
+Plug 'thinca/vim-quickrun'
 " colorscheme
 Plug 'aereal/vim-colors-japanesque'
 Plug 'freeo/vim-kalisi'
@@ -96,6 +97,8 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript '}
 Plug 'pmsorhaindo/syntastic-local-eslint.vim', { 'for': 'javascript' }
+" php
+Plug 'jwalton512/vim-blade', { 'for': 'php' }
 call plug#end()
 
 " ---------------------
