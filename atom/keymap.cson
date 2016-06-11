@@ -1,0 +1,8 @@
+'atom-text-editor:not([mini])':
+  'ctrl-e': 'editor:move-to-end-of-line'
+  'ctrl-shift-E': 'editor:select-to-end-of-line'
+'body':
+  'ctrl-k ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-k ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-k ctrl-k': 'window:focus-pane-on-up'
+  'ctrl-k ctrl-j': 'window:focus-pane-on-down'

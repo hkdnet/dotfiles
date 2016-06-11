@@ -23,5 +23,12 @@ for file in ${files[@]}; do
   ln -sf ${script_dir}/${file} ~/${file}
 done
 
-ln -s ~/.vim   ~/.config/nvim/
-ln -s ~/.vimrc ~/.config/nvim/init.vim
+atom=(
+  keymap.cson
+)
+for file in ${atom[@]}; do
+  ln -sf ${script_dir}/atom/${file} ~/.atom/${file}
+done
+
+ln -sf ~/.vim   ~/.config/nvim/
+ln -sf ~/.vimrc ~/.config/nvim/init.vim
