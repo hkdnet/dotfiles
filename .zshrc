@@ -80,5 +80,10 @@ source $HOME/.secrets
 #
 export PATH=$PATH:$HOME/bin
 
+#
+# dotnet
+#
+export PATH=/usr/local/share/dotnet:$PATH
+
 # nvim
 export XDG_CONFIG_HOME=$HOME/.config
