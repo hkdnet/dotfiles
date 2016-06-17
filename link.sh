@@ -25,6 +25,7 @@ done
 
 atom=(
   keymap.cson
+  snippets.cson
 )
 for file in ${atom[@]}; do
   ln -sf ${script_dir}/atom/${file} ~/.atom/${file}

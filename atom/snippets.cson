@@ -1,0 +1,35 @@
+'.meta.class.body.js':
+  'getter':
+    'prefix': 'get'
+    'body': 'get ${1:name}() { return this._$1; }'
+  'getter with initialize':
+    'prefix': 'geti'
+    'body': 'get ${1:name}() { return this._$1 || this._$1 = ${2:value}; }'
+'.source.js':
+  'import':
+    'prefix': 'import'
+    'body': 'import ${1:name} from \'${2:source}\';'
+  'mocha testcase':
+    'prefix': 'mit'
+    'body': """
+      it('${1:case}', function() {
+        assert(${2:false});
+      });
+    """
+  'mocha describe':
+    'prefix': 'mdesc'
+    'body': """
+      describe('${1:targe}', function() {
+        $2
+      });
+    """
+  'mocha beforeEach':
+    'prefix': 'mbeforeeach'
+    'body': """
+      beforeEach(function() {
+        $1
+      });
+    """
+  'assert':
+    'prefix': 'assert'
+    'body': 'assert($1);'
