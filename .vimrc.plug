@@ -192,3 +192,9 @@ let g:vim_markdown_frontmatter = 1
 "      \    "runner/vimproc/updatetime" : 100
 "      \  }
 "      \}
+"
+" --------------------------------
+" github-complete
+" --------------------------------
+let g:github_complete_enable_neocomplete = 1
+

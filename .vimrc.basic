@@ -71,6 +71,9 @@ Plug 'Shougo/vimproc.vim'
 Plug 'kmnk/vim-unite-giti'
 Plug 'Shougo/neomru.vim'
 
+" emoji
+Plug 'junegunn/vim-emoji', { 'for': ['gitcommit', 'markdown'] } | Plug 'rhysd/github-complete.vim'
+
 " golang
 Plug 'fatih/vim-go', { 'for': 'go' }
 " php
