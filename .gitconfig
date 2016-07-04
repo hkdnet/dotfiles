@@ -26,6 +26,7 @@
 	so  = remote show origin
 	po  = push origin
 	c   = commit -v
+	co  = checkout
 	# diff関連
 	di = diff
 	dm = diff master           # masterとのdiff
