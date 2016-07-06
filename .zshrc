@@ -12,6 +12,7 @@ fi
 
 # Customize to your needs...
 
+export TERM=xterm-256color
 # unique path
 typeset -U path PATH
 typeset -U fpath FPATH

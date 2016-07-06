@@ -104,6 +104,8 @@ Plug 'pmsorhaindo/syntastic-local-eslint.vim', { 'for': 'javascript' }
 Plug 'jwalton512/vim-blade', { 'for': 'php' }
 call plug#end()
 
+set t_Co=256
+
 " ---------------------
 " color: japanesque
 " ---------------------
