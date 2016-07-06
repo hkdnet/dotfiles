@@ -15,8 +15,7 @@ set formatoptions=lmoq           " テキスト整形オプション，マルチ
 set vb t_vb=                     " ビープをならさない
 set browsedir=buffer             " Exploreの初期ディレクトリ
 set whichwrap=b,s,h,l,<,>,[,]    " カーソルを行頭、行末で止まらないようにする
-set showcmd                      " コマンドをステータス行に表示
-set showmode                     " 現在のモードを表示
+set noshowmode                   " lightline.vimを使う
 set viminfo='50,<1000,s100,\"50  " viminfoファイルの設定
 set modelines=0                  " モードラインは無効
 set number                       " 行番号を表示
@@ -57,6 +56,7 @@ Plug 'scrooloose/syntastic'
 Plug 'thinca/vim-ref' | Plug 'mojako/ref-sources.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'itchyny/lightline.vim'
 " colorscheme
 Plug 'aereal/vim-colors-japanesque'
 Plug 'freeo/vim-kalisi'

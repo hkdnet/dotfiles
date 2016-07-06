@@ -54,6 +54,14 @@ function c() {
 }
 
 #
+# si
+#
+show_open_issues_on_web() {
+  ghi show -w $(ghi list --filter 'all'| peco)
+}
+alias si=show_open_issues_on_web
+
+#
 # golang
 #
 export GOPATH=$HOME/.go

@@ -33,3 +33,5 @@ done
 
 ln -sf ~/.vim   ~/.config/nvim/
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
+
+ln -sf config/peco/config.json ~/config/peco/config.json
