@@ -19,6 +19,7 @@ set noshowmode                   " lightline.vimを使う
 set viminfo='50,<1000,s100,\"50  " viminfoファイルの設定
 set modelines=0                  " モードラインは無効
 set number                       " 行番号を表示
+set cursorline                   " カーソル行を表示
 set list                         " 不可視文字の表示
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set notitle                      " vimを使ってくれてありがとう
@@ -57,6 +58,9 @@ Plug 'thinca/vim-ref' | Plug 'mojako/ref-sources.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'itchyny/lightline.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'easymotion/vim-easymotion'
 " colorscheme
 Plug 'aereal/vim-colors-japanesque'
 Plug 'freeo/vim-kalisi'

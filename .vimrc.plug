@@ -69,6 +69,7 @@ let g:neocomplete#sources#omni#input_patterns = {
       \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
       \   "javascript" : '[^. \t]\.\%(\h\w*\)\?',
       \   "php": '[^. \t]->\h\w*\|\h\w*::',
+      \   "go": '\h\w\.\w*',
       \}
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
@@ -76,7 +77,30 @@ let g:neocomplete#sources#omni#input_patterns = {
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" --------------------------------
+" Shougo/neosnippet.vim
+" --------------------------------
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets,~/.vim/plugged/vim-go/gosnippets/snippets'
 
 " --------------------------------
 " syntastic
@@ -174,6 +198,21 @@ nnoremap <silent> [rails]h :<C-u>Unite<Space>rails/helper<Return>
 " NERDTreeToggle
 " --------------------------------
 nnoremap <silent> <Leader>nt :<C-u>NERDTreeToggle<Return>
+
+" --------------------------------
+" nerdtree-git-plugin
+" --------------------------------
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "N",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 " --------------------------------
 " vim-markdown
