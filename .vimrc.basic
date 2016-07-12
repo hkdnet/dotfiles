@@ -23,6 +23,7 @@ set cursorline                   " カーソル行を表示
 set list                         " 不可視文字の表示
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set notitle                      " vimを使ってくれてありがとう
+
 " ターミナルでマウスを使用できるようにする
 set mouse=a
 set guioptions+=a
@@ -61,6 +62,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
 " colorscheme
 Plug 'aereal/vim-colors-japanesque'
 Plug 'freeo/vim-kalisi'
@@ -68,6 +70,9 @@ Plug 'mhartington/oceanic-next'
 Plug 'tomasr/molokai'
 Plug 'sjl/badwolf'
 Plug 'altercation/vim-colors-solarized'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'nanotech/jellybeans.vim'
+Plug 'jonathanfilip/vim-lucius'
 " unite
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
@@ -110,10 +115,11 @@ call plug#end()
 
 set t_Co=256
 
-" ---------------------
-" color: japanesque
-" ---------------------
+" colorscheme lucius
+" colorscheme jellybeans
+" colorscheme railscasts
 colorscheme japanesque
+" colorscheme molokai
 " ---------------------
 " color: kalisi
 " ---------------------
@@ -123,7 +129,6 @@ colorscheme japanesque
 " set t_Co=256
 " let &t_AB="\e[48;5;%dm"
 " let &t_AF="\e[38;5;%dm"
-" colorscheme molokai
 
 " ---------------------
 " color for OceanicNext
