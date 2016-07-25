@@ -2,7 +2,7 @@
 	name = hkdnet
 	email = hkdnet@users.noreply.github.com
 [push]
-	default = simple
+	default = current
 [core]
 	excludesfile = ~/.gitignore  # globalな.gitignoreの指定
 	editor = vim
