@@ -300,3 +300,45 @@ function! LightLineMode()
 endfunction
 
 set laststatus=2
+
+" --------------------------------
+" vim-easymotion
+" --------------------------------
+let g:EasyMotion_smartcase = 1
+
+" --------------------------------
+" vimagit
+" --------------------------------
+let g:magit_default_show_all_files = 2
+let g:magit_default_fold_level = 2
+
+" --------------------------------
+" vim-anzu
+" --------------------------------
+nmap n <Plug>(anzu-n)
+nmap N <Plug>(anzu-N)
+nmap * <Plug>(anzu-star)
+nmap # <Plug>(anzu-sharp)
+nmap <silent> <Esc><Esc> :<C-u>nohlsearch<Return><Plug>(anzu-clear-search-status)
+
+" --------------------------------
+" vim-over
+" --------------------------------
+nnoremap <silent> <Leader>s :<C-u>OverCommandLine<Return>
+xnoremap <silent> <Leader>s :<C-u>'<,'>OverCommandLine<Return>
+
+" --------------------------------
+" CtrlP
+" --------------------------------
+if get(g:, 'load_cpsm')
+  let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
+endif
+
+if get(g:, 'ctrlp_use_files') && executable('files')
+  let g:ctrlp_user_command = 'files -a %s'
+else
+  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+endif
+
+let g:ctrlp_match_window = 'bottom,order:btt,min:3,max:15,results:15'
+let g:ctrlp_open_new_file = 'r'
