@@ -85,6 +85,8 @@ Plug 'Shougo/unite-outline'
 Plug 'Shougo/vimproc.vim'
 Plug 'kmnk/vim-unite-giti'
 Plug 'Shougo/neomru.vim'
+" textobj
+Plug 'kana/vim-textobj-user'
 
 " emoji
 Plug 'junegunn/vim-emoji', { 'for': ['gitcommit', 'markdown'] } | Plug 'rhysd/github-complete.vim'
@@ -101,6 +103,7 @@ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'kannokanno/previm', { 'for': 'markdown' }
 " ruby
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'yuku-t/vim-ref-ri', { 'for': 'ruby' }
 Plug 'basyura/unite-rails', { 'for': 'ruby' }
@@ -108,6 +111,8 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'git@github.com:tpope/vim-bundler.git', { 'for': 'ruby' }
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'git@github.com:osyo-manga/vim-monster.git', { 'for': 'ruby' }
+Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby' }
+Plug 'todesking/ruby_hl_lvar.vim', { 'for': 'ruby' }
 " HTML
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 " javascript
