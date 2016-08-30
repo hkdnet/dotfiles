@@ -69,6 +69,8 @@ Plug 'tyru/caw.vim'
 Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-over'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
 " colorscheme
 Plug 'aereal/vim-colors-japanesque'
 Plug 'freeo/vim-kalisi'
@@ -113,8 +115,6 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'git@github.com:osyo-manga/vim-monster.git', { 'for': 'ruby' }
 Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby' }
 Plug 'todesking/ruby_hl_lvar.vim', { 'for': 'ruby' }
-" HTML
-Plug 'mattn/emmet-vim', { 'for': 'html' }
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
