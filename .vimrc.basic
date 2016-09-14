@@ -23,6 +23,16 @@ set cursorline                   " カーソル行を表示
 set list                         " 不可視文字の表示
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set notitle                      " vimを使ってくれてありがとう
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
 
 " ターミナルでマウスを使用できるようにする
 set mouse=a
