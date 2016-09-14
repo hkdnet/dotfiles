@@ -111,3 +111,6 @@ function peco-find-file() {
 }
 zle -N peco-find-file
 bindkey '^q' peco-find-file
+
+# vim
+export EDITOR=vim
