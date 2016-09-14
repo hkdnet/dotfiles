@@ -137,10 +137,11 @@ call plug#end()
 
 set t_Co=256
 
-" colorscheme lucius
+set background=dark
+colorscheme lucius
 " colorscheme jellybeans
 " colorscheme railscasts
-colorscheme japanesque
+" colorscheme japanesque
 " colorscheme molokai
 " ---------------------
 " color: kalisi
