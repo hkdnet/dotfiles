@@ -54,8 +54,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " basic
-Plug 'junegunn/vim-plug',
-      \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
+Plug 'junegunn/vim-plug', {'dir': '~/.vim/plugged/vim-plug/autoload'}
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'wakatime/vim-wakatime'
