@@ -1,3 +1,4 @@
+source $VIMRUNTIME/defaults.vim
 
 source ~/.vimrc.basic
 source ~/.vimrc.plug
