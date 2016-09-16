@@ -78,6 +78,8 @@ Plug 'osyo-manga/vim-over'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
+Plug 'rizzatti/dash.vim'
+Plug 'ConradIrwin/vim-bracketed-paste'
 " colorscheme
 Plug 'aereal/vim-colors-japanesque'
 Plug 'freeo/vim-kalisi'

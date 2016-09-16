@@ -337,3 +337,8 @@ endif
 
 let g:ctrlp_match_window = 'bottom,order:btt,min:3,max:15,results:15'
 let g:ctrlp_open_new_file = 'r'
+
+" --------------------------------
+" dash
+" --------------------------------
+nmap <Leader>h :Dash<Return>
