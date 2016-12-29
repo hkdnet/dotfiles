@@ -114,3 +114,6 @@ bindkey '^q' peco-find-file
 
 # vim
 export EDITOR=vim
+
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
