@@ -113,6 +113,8 @@ Plug 'rhysd/vim-crystal', { 'for': 'crystal' }
 " markdown
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'kannokanno/previm', { 'for': 'markdown' }
+" python
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 " ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
