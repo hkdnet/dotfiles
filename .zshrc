@@ -69,6 +69,9 @@ export GOPATH=$HOME/.go
 export GOENVHOME=$HOME/.goenvs
 export PATH=$PATH:$GOPATH/bin
 
+# rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 #
 # gem
 #

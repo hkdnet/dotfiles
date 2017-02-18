@@ -103,6 +103,8 @@ Plug 'junegunn/vim-emoji', { 'for': ['gitcommit', 'markdown'] } | Plug 'rhysd/gi
 
 " golang
 Plug 'fatih/vim-go', { 'for': 'go' }
+" rust
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " php
 Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
 " Dockerfile
