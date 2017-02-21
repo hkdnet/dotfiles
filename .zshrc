@@ -19,6 +19,7 @@ fi
 source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "plugins/aws", from:oh-my-zsh
 zplug load
 
 export TERM=xterm-256color
