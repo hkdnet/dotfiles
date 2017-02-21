@@ -3,6 +3,8 @@
 	email = hkdnet@users.noreply.github.com
 [push]
 	default = current
+[fetch]
+	prune = true
 [core]
 	excludesfile = ~/.gitignore  # globalな.gitignoreの指定
 	editor = vim
