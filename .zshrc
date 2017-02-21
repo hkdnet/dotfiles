@@ -12,6 +12,15 @@ fi
 
 # Customize to your needs...
 
+export ZPLUG_HOME=$HOME/.zplug
+if [ ! -d $ZPLUG_HOME ]; then
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+fi
+source $ZPLUG_HOME/init.zsh
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug load
+
 export TERM=xterm-256color
 # unique path
 typeset -U path PATH
