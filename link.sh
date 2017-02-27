@@ -18,6 +18,7 @@ files=(
   .vimrc.plug
   .vimrc.indent
   .vimrc.lang
+  .thymerc
 )
 for file in ${files[@]}; do
   ln -sf ${script_dir}/${file} ~/${file}
