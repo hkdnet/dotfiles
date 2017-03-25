@@ -55,3 +55,5 @@
 	user = hkdnet
 [ghi]
 	token = !security find-internet-password -a hkdnet -s github.com -l 'ghi token' -w
+[diff]
+  indentHeuristic = true
