@@ -100,19 +100,19 @@ let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnipp
 " --------------------------------
 " syntastic
 " --------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-      \ 'mode': 'passive',
-      \ 'active_filetypes': ['php', 'ruby', 'go', 'javascript', 'crystal']
-      \}
-let g:syntastic_html_tidy_ignore_errors = ['trimming empty <i>']
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = {
+"       \ 'mode': 'passive',
+"       \ 'active_filetypes': ['php', 'ruby', 'go', 'javascript', 'crystal']
+"       \}
+" let g:syntastic_html_tidy_ignore_errors = ['trimming empty <i>']
 
 " --------------------------------
 " vim-php-cs-fixer
@@ -246,7 +246,11 @@ let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \   'left': [
+        \     [ 'mode', 'paste' ],
+        \     [ 'fugitive', 'filename' ],
+        \     [ 'ale' ],
+        \   ]
         \ },
         \ 'component_function': {
         \   'modified': 'LightLineModified',
@@ -256,7 +260,8 @@ let g:lightline = {
         \   'fileformat': 'LightLineFileformat',
         \   'filetype': 'LightLineFiletype',
         \   'fileencoding': 'LightLineFileencoding',
-        \   'mode': 'LightLineMode'
+        \   'mode': 'LightLineMode',
+        \   'ale': 'ALEStatus'
         \ }
         \ }
 
