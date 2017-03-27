@@ -82,6 +82,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
 Plug 'rizzatti/dash.vim'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'editorconfig/editorconfig-vim'
 " colorscheme
 Plug 'aereal/vim-colors-japanesque'
 Plug 'freeo/vim-kalisi'
