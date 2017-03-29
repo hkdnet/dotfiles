@@ -33,7 +33,9 @@ set -x PATH $PATH /usr/local/share/dotnet
 
 # editor
 set -x EDITOR vim
-set -x UNDLER_EDITOR vim
+set -x BUNDLER_EDITOR vim
+
+alias vi vim
 
 function fish_user_key_bindings
   bind \cr peco_select_history
