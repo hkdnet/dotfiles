@@ -6,10 +6,8 @@ if [ -d $HOME/.anyenv ]
   anyenv init - | source
 end
 
-#
 # github
-#
-# hub alias -s | source
+hub alias -s | source
 
 
 # golang
