@@ -1,5 +1,3 @@
-set -x PATH /usr/local/bin $PATH
-
 # anyenv
 if [ -d $HOME/.anyenv ]
   set -x PATH $HOME/.anyenv/bin $PATH
