@@ -2,3 +2,4 @@
 .env
 npm-debug.log
 .vscode/
+*.rs.fmt
