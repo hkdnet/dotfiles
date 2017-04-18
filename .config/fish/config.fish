@@ -55,11 +55,6 @@ function peco_select_ghq_repository
   end
 end
 
-function cd
-  builtin cd $argv
-  ls -la
-end
-
 function peco
   command peco --layout=bottom-up $argv
 end
