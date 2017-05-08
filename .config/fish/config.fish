@@ -29,6 +29,9 @@ set -x PATH $PATH $HOME/bin
 # dotnet
 set -x PATH $PATH /usr/local/share/dotnet
 
+# haskell
+set -x PATH $PATH ~/Library/Haskell/bin
+
 # editor
 set -x EDITOR vim
 set -x BUNDLER_EDITOR vim
