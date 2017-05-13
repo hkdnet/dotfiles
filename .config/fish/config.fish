@@ -30,7 +30,9 @@ set -x PATH $PATH $HOME/bin
 set -x PATH $PATH /usr/local/share/dotnet
 
 # haskell
-set -x PATH $PATH ~/Library/Haskell/bin
+if [ -d ~/Library/Haskell/bin ]
+  set -x PATH $PATH ~/Library/Haskell/bin
+end
 
 # editor
 set -x EDITOR vim
