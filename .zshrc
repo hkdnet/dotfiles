@@ -27,30 +27,61 @@ export TERM=xterm-256color
 typeset -U path PATH
 typeset -U fpath FPATH
 
-# history search by peco
-peco-select-history() {
-    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
-    CURSOR=${#BUFFER}
-    zle reset-prompt
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
-
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init - zsh)"
 fi
 
-#
 # github
-#
 eval "$(hub alias -s)"
 
-#
+# golang
+export GOPATH=$HOME/.go
+export GOENVHOME=$HOME/.goenvs
+export PATH=$PATH:$GOPATH/bin
+
+# rust
+export PATH=$PATH:$HOME/.cargo/bin
+
+# tmux
+alias ta='tmux a -t $(tmux ls -F "#S" | peco)'
+
+# secrets
+source $HOME/.secrets
+
+# local bin
+export PATH=$PATH:$HOME/bin
+
+# dotnet
+export PATH=/usr/local/share/dotnet:$PATH
+
+# haskell
+if [ -d ~/Library/Haskell/bin ]; then
+  export PATH=$PATH:~/Library/Haskell/bin
+fi
+
+# editor
+export EDITOR=vim
+export BUNDLER_EDITOR=atom
+
+alias vi vim
+
+# nvim
+export XDG_CONFIG_HOME=$HOME/.config
+
+# history search by peco
+peco-select-history() {
+    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --layout bottom-up --query "$LBUFFER")
+    CURSOR=${#BUFFER}
+    zle reset-prompt
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+
 # gcd
-#
-function c() {
+function peco-select-ghq-repository() {
   local dirs lc dir
   dirs=$(ghq list -p)
   # ghqのlistはignore caseのオプションがなさそうなので
@@ -59,74 +90,23 @@ function c() {
   if [[ $lc == '1' ]] ; then
     cd ${dirs}
   else
-    dir=$(echo $dirs | peco)
+    dir=$(echo $dirs | peco --layout bottom-up)
     [[ -z $dir ]] || cd $dir
   fi
 }
+zle -N peco-select-ghq-repository
+bindkey '^]' peco-select-ghq-repository
 
-#
-# si
-#
-show_open_issues_on_web() {
-  ghi show -w $(ghi list --filter 'all'| peco)
-}
-alias si=show_open_issues_on_web
-
-#
-# golang
-#
-export GOPATH=$HOME/.go
-export GOENVHOME=$HOME/.goenvs
-export PATH=$PATH:$GOPATH/bin
-
-# rust
-export PATH=$PATH:$HOME/.cargo/bin
-
-#
-# gem
-#
-export BUNDLER_EDITOR=atom
-
-#
-# tmux
-#
-alias ta='tmux a -t $(tmux ls -F "#S" | peco)'
-
-#
-# secrets
-#
-source $HOME/.secrets
-
-#
-# local bin
-#
-export PATH=$PATH:$HOME/bin
-
-#
-# dotnet
-#
-export PATH=/usr/local/share/dotnet:$PATH
-
-# nvim
-export XDG_CONFIG_HOME=$HOME/.config
-
-function peco-find-file() {
-    if git rev-parse 2> /dev/null; then
-        source_files=$(git ls-files)
+if [ -z "$TMUX" ]; then
+    local session
+    session=$(tmux list-sessions 2>/dev/null | awk -F: '{ print $1 }')
+    if [ -z "$session" ]; then
+        tmux
     else
-        source_files=$(find . -type f)
+        tmux attach-session -t $session
     fi
-    selected_files=$(echo $source_files | peco --prompt "[find file]")
-
-    BUFFER="${BUFFER}${echo $selected_files | tr "\n" ' '}"
-    CURSOR=$#BUFFER
-    zle redisplay
-}
-zle -N peco-find-file
-bindkey '^q' peco-find-file
-
-# vim
-export EDITOR=vim
+fi
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+
