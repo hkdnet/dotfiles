@@ -143,7 +143,7 @@ Plug 'Galooshi/vim-import-js'
 " php
 Plug 'jwalton512/vim-blade', { 'for': 'php' }
 " fish
-Plug 'dag/vim-fish'
+Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
 set t_Co=256
