@@ -93,12 +93,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'nanotech/jellybeans.vim'
 Plug 'jonathanfilip/vim-lucius'
-" unite
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/unite-outline'
-Plug 'Shougo/vimproc.vim'
-Plug 'kmnk/vim-unite-giti'
-Plug 'Shougo/neomru.vim'
 " textobj
 Plug 'kana/vim-textobj-user'
 
@@ -126,7 +120,6 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'yuku-t/vim-ref-ri', { 'for': 'ruby' }
-Plug 'basyura/unite-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'git@github.com:tpope/vim-bundler.git', { 'for': 'ruby' }
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
