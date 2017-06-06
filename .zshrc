@@ -34,7 +34,9 @@ if [ -d $HOME/.anyenv ] ; then
 fi
 
 # github
-eval "$(hub alias -s)"
+if [ -x hub ]; then
+  eval "$(hub alias -s)"
+fi
 
 # golang
 export GOPATH=$HOME/.go
@@ -48,7 +50,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 alias ta='tmux a -t $(tmux ls -F "#S" | peco)'
 
 # secrets
-source $HOME/.secrets
+if [ -e $HOME/.secrets ]; then
+  source $HOME/.secrets
+fi
 
 # local bin
 export PATH=$PATH:$HOME/bin
@@ -107,6 +111,8 @@ if [ -z "$TMUX" ]; then
     fi
 fi
 
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+# if [ -d ~/.zsh/completion ]; then
+#   fpath=(~/.zsh/completion $fpath)
+#   autoload -Uz compinit && compinit -i
+# fi
 
