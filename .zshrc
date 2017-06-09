@@ -34,7 +34,7 @@ if [ -d $HOME/.anyenv ] ; then
 fi
 
 # github
-if [ -x hub ]; then
+if [ -x $(which hub) ]; then
   eval "$(hub alias -s)"
 fi
 
