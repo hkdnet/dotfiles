@@ -1,5 +1,6 @@
 .DS_Store
 .env
+.envrc
 npm-debug.log
 .vscode/
 *.rs.fmt
