@@ -27,6 +27,11 @@ export TERM=xterm-256color
 typeset -U path PATH
 typeset -U fpath FPATH
 
+# direnv
+if [ -x "$(which direnv)" ]; then
+  eval "$(direnv hook zsh)"
+fi
+
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
