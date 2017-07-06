@@ -127,6 +127,7 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 " Plug 'git@github.com:osyo-manga/vim-monster.git', { 'for': 'ruby' }
 Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby' }
 Plug 'todesking/ruby_hl_lvar.vim', { 'for': 'ruby' }
+Plug 'slim-template/vim-slim'
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
