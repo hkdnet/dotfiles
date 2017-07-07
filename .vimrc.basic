@@ -189,3 +189,10 @@ nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 
+" タグジャンプ
+nnoremap [tagj] <Nop>
+nmap <Leader>j [tagj]
+nnoremap <silent> [tagj]n :tjump <C-r><C-w><CR>
+nnoremap <silent> [tagj]b <C-O>
+nnoremap <silent> [tagj]<C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <silent> [tagj]<C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
