@@ -127,6 +127,14 @@ let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run op
 let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
 
 " --------------------------------
+" ale
+" --------------------------------
+
+let g:ale_linters = {
+    \ 'ruby': ['ruby', 'rubocop'],
+    \}
+
+" --------------------------------
 " ale for php
 " --------------------------------
 let g:ale_php_phpcs_standard = "psr2"
