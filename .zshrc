@@ -20,7 +20,8 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "plugins/aws", from:oh-my-zsh
-# zplug load
+zplug "plugins/git",   from:oh-my-zsh
+zplug load
 
 export TERM=xterm-256color
 # unique path
@@ -116,8 +117,10 @@ if [ -z "$TMUX" ]; then
     fi
 fi
 
-# if [ -d ~/.zsh/completion ]; then
-#   fpath=(~/.zsh/completion $fpath)
-#   autoload -Uz compinit && compinit -i
-# fi
-
+if [ -d ~/.zsh/completion ]; then
+  fpath=(~/.zsh/completion $fpath)
+fi
+if [ -d "$(brew --prefix)/share/zsh/site-functions" ]; then
+ fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
+autoload -Uz compinit && compinit -i
