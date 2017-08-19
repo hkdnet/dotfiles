@@ -6,3 +6,4 @@ npm-debug.log
 *.rs.fmt
 .ruby-version
 tags
+.idea/
