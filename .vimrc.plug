@@ -130,9 +130,13 @@ let g:php_cs_fixer_verbose = 0                    " Return the output of command
 " ale
 " --------------------------------
 
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_delay = 500
+
 let g:ale_linters = {
     \ 'ruby': ['ruby', 'rubocop'],
     \}
+let g:ale_ruby_rubocop_executable = 'bundle exec rubocop'
 
 " --------------------------------
 " ale for php
