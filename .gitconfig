@@ -52,7 +52,7 @@
 	discard = checkout --
 	uncommit = reset --mixed HEAD~
 	amend = commit -v --amend
-	fpr    = "!f(){ git fetch origin pull/$1/head:$1; git checkout $1; };f"
+	fpr    = "!f(){ git fetch upstream pull/$1/head:$1; git checkout $1; };f"
 [github]
 	user = hkdnet
 [ghi]
