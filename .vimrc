@@ -202,7 +202,321 @@ nnoremap <silent> [tagj]b <C-O>
 nnoremap <silent> [tagj]<C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <silent> [tagj]<C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
-source ~/.vimrc.plug
+" --------------------------------
+" NeoComplete
+" --------------------------------
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+      \ 'default' : '',
+      \ 'vimshell' : $HOME.'/.vimshell_hist',
+      \ 'scheme' : $HOME.'/.gosh_completions'
+      \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns = {
+      \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+      \   "javascript" : '[^. \t]\.\%(\h\w*\)\?',
+      \   "php": '[^. \t]->\h\w*\|\h\w*::',
+      \   "go": '\h\w\.\w*',
+      \}
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" --------------------------------
+" Shougo/neosnippet.vim
+" --------------------------------
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets,~/.vim/plugged/vim-go/gosnippets/snippets'
+
+" --------------------------------
+" syntastic
+" --------------------------------
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_mode_map = {
+"       \ 'mode': 'passive',
+"       \ 'active_filetypes': ['php', 'ruby', 'go', 'javascript', 'crystal']
+"       \}
+" let g:syntastic_html_tidy_ignore_errors = ['trimming empty <i>']
+
+" --------------------------------
+" vim-php-cs-fixer
+" --------------------------------
+let g:php_cs_fixer_level = "psr2"                 " which level ?
+let g:php_cs_fixer_config = "default"             " configuration
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+" If you want to define specific fixers:
+"let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+
+" --------------------------------
+" ale
+" --------------------------------
+
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_delay = 500
+
+let g:ale_linters = {
+    \ 'ruby': ['ruby', 'rubocop'],
+    \}
+let g:ale_ruby_rubocop_executable = 'bundle exec rubocop'
+let g:ale_fixers = {
+    \ 'javascript': ['prettier'],
+    \}
+" let g:ale_fix_on_save = 1
+
+" --------------------------------
+" ale for php
+" --------------------------------
+let g:ale_php_phpcs_standard = "psr2"
+
+" --------------------------------
+" NERDTreeToggle
+" --------------------------------
+nnoremap <silent> <Leader>nt :<C-u>NERDTreeToggle<Return>
+
+" --------------------------------
+" nerdtree-git-plugin
+" --------------------------------
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "N",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+" --------------------------------
+" vim-markdown
+" --------------------------------
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+
+
+" --------------------------------
+" quickrun
+" --------------------------------
+let g:quickrun_config={
+      \  '_': {
+      \     'runner'    : 'vimproc',
+      \     'runner/vimproc/updatetime' : 60,
+      \     'outputter' : 'error',
+      \     'outputter/error/success' : 'buffer',
+      \     'outputter/error/error'   : 'quickfix',
+      \     'outputter/buffer/split'  : ':rightbelow 8sp',
+      \     'outputter/buffer/close_on_empty' : 1,
+      \  }
+      \}
+let g:quickrun_no_default_key_mappings = 1
+nnoremap <expr><silent> <Leader><C-r> quickrun#run(g:quickrun_config)
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
+" --------------------------------
+" github-complete
+" --------------------------------
+let g:github_complete_enable_neocomplete = 1
+
+" --------------------------------
+" itchyny/lightline.vim
+" --------------------------------
+let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [
+        \     [ 'mode', 'paste' ],
+        \     [ 'fugitive', 'filename' ],
+        \     [ 'ale' ],
+        \   ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'LightLineModified',
+        \   'readonly': 'LightLineReadonly',
+        \   'fugitive': 'LightLineFugitive',
+        \   'filename': 'LightLineFilename',
+        \   'fileformat': 'LightLineFileformat',
+        \   'filetype': 'LightLineFiletype',
+        \   'fileencoding': 'LightLineFileencoding',
+        \   'mode': 'LightLineMode',
+        \   'ale': 'ALEStatus'
+        \ }
+        \ }
+
+function! LightLineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightLineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! LightLineFilename()
+  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+function! LightLineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightLineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightLineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightLineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightLineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+set laststatus=2
+
+" --------------------------------
+" vim-easymotion
+" --------------------------------
+let g:EasyMotion_smartcase = 1
+
+" --------------------------------
+" vimagit
+" --------------------------------
+let g:magit_default_show_all_files = 2
+let g:magit_default_fold_level = 2
+
+" --------------------------------
+" vim-anzu
+" --------------------------------
+nmap n <Plug>(anzu-n)
+nmap N <Plug>(anzu-N)
+nmap * <Plug>(anzu-star)
+nmap # <Plug>(anzu-sharp)
+nmap <silent> <Esc><Esc> :<C-u>nohlsearch<Return><Plug>(anzu-clear-search-status)
+
+" --------------------------------
+" vim-over
+" --------------------------------
+nnoremap <silent> <Leader>s :<C-u>OverCommandLine<Return>
+xnoremap <silent> <Leader>s :<C-u>'<,'>OverCommandLine<Return>
+
+" --------------------------------
+" CtrlP
+" --------------------------------
+if get(g:, 'load_cpsm')
+  let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
+endif
+
+if get(g:, 'ctrlp_use_files') && executable('files')
+  let g:ctrlp_user_command = 'files -a %s'
+else
+  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+endif
+
+let g:ctrlp_match_window = 'bottom,order:btt,min:3,max:15,results:15'
+let g:ctrlp_open_new_file = 'r'
+
+" --------------------------------
+" dash
+" --------------------------------
+nmap <Leader>h :Dash<Return>
+
 source ~/.vimrc.indent
 source ~/.vimrc.lang
 
