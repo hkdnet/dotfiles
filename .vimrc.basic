@@ -134,6 +134,7 @@ Plug 'myhere/vim-nodejs-complete', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript '}
 Plug 'pmsorhaindo/syntastic-local-eslint.vim', { 'for': 'javascript' }
 Plug 'nicklasos/vim-jsx-riot', { 'for': 'javascript' }
+Plug 'posva/vim-vue'
 Plug 'Galooshi/vim-import-js'
 Plug 'kchmck/vim-coffee-script'
 " typescript

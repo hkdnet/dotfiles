@@ -10,3 +10,4 @@ tags
 .idea/
 vendor/
 *.out
+.nuxt
