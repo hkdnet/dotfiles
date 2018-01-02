@@ -565,7 +565,91 @@ if has("autocmd")
  autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
 endif
 
-source ~/.vimrc.lang
+" --------------------------------
+" golang
+" --------------------------------
+
+set rtp+=$GOPATH/misc/vim
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_list_type = "quickfix"
+autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :match goErr /\<err\>/
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+" --------------------------------
+" php
+" --------------------------------
+
+" Baselibメソッドのハイライト
+let php_baselib = 1
+" <? をハイライト除外にする
+let php_noShortTags = 1
+" カッコが閉じていない場合にハイライト
+let php_parent_error_close = 1
+let g:syntastic_php_checkers = ['phpcs']
+let g:syntastic_php_phpcs_args= '--standard=psr2 --encoding=utf-8'
+
+" --------------------------------
+" ruby
+" --------------------------------
+let g:syntastic_ruby_checkers = ['rubocop']
+
+" --------------------------------
+" javascript
+" --------------------------------
+au BufRead,BufNewFile *.tag :set filetype=javascript
+let g:syntastic_javascript_checkers=['eslint']
+" http://koturn.hatenablog.com/entry/2015/07/27/042519
+if executable('jq')
+  function! s:jq(has_bang, ...) abort range
+    execute 'silent' a:firstline ',' a:lastline '!jq' string(a:0 == 0 ? '.' : a:1)
+    if !v:shell_error || a:has_bang
+      return
+    endif
+    let error_lines = filter(getline('1', '$'), 'v:val =~# "^parse error: "')
+    " 範囲指定している場合のために，行番号を置き換える
+    let error_lines = map(error_lines, 'substitute(v:val, "line \\zs\\(\\d\\+\\)\\ze,", "\\=(submatch(1) + a:firstline - 1)", "")')
+    let winheight = len(error_lines) > 10 ? 10 : len(error_lines)
+    " カレントバッファがエラーメッセージになっているので，元に戻す
+    undo
+    " カレントバッファの下に新たにウィンドウを作り，エラーメッセージを表示するバッファを作成する
+    execute 'botright' winheight 'new'
+    setlocal nobuflisted bufhidden=unload buftype=nofile
+    call setline(1, error_lines)
+    " エラーメッセージ用バッファのundo履歴を削除(エラーメッセージをundoで消去しないため)
+    let save_undolevels = &l:undolevels
+    setlocal undolevels=-1
+    execute "normal! a \<BS>\<Esc>"
+    setlocal nomodified
+    let &l:undolevels = save_undolevels
+    " エラーメッセージ用バッファは読み取り専用にしておく
+    setlocal readonly
+  endfunction
+  command! -bar -bang -range=% -nargs=? Jq  <line1>,<line2>call s:jq(<bang>0, <f-args>)
+endif
 
 " colors
 if exists('+termguicolors')
