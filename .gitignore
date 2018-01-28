@@ -11,3 +11,5 @@ tags
 vendor/
 *.out
 .nuxt
+*.o
+*.hi
