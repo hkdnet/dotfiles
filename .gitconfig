@@ -26,7 +26,7 @@
 	sh  = show
 	so  = remote show origin
 	po  = push origin
-	c   = commit -v
+	c   = commit
 	co  = checkout
 	# diff関連
 	di = diff
@@ -59,3 +59,5 @@
 	token = !security find-internet-password -a hkdnet -s github.com -l 'ghi token' -w
 [diff]
   indentHeuristic = true
+[commit]
+	verbose = true
