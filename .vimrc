@@ -100,9 +100,6 @@ Plug 'jonathanfilip/vim-lucius'
 " textobj
 Plug 'kana/vim-textobj-user'
 
-" emoji
-Plug 'junegunn/vim-emoji', { 'for': ['gitcommit', 'markdown'] } | Plug 'rhysd/github-complete.vim'
-
 " yaml
 Plug 'stephpy/vim-yaml'
 " golang
