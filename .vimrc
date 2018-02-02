@@ -612,11 +612,6 @@ let g:syntastic_php_checkers = ['phpcs']
 let g:syntastic_php_phpcs_args= '--standard=psr2 --encoding=utf-8'
 
 " --------------------------------
-" ruby
-" --------------------------------
-let g:syntastic_ruby_checkers = ['rubocop']
-
-" --------------------------------
 " javascript
 " --------------------------------
 au BufRead,BufNewFile *.tag :set filetype=javascript
