@@ -121,7 +121,6 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-bundler', { 'for': 'ruby' }
-Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 " Plug 'git@github.com:osyo-manga/vim-monster.git', { 'for': 'ruby' }
 Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby' }
 Plug 'todesking/ruby_hl_lvar.vim', { 'for': 'ruby' }
