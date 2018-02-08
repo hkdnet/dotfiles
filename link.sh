@@ -14,10 +14,6 @@ files=(
   .zshenv
   .zshrc
   .vimrc
-  .vimrc.basic
-  .vimrc.plug
-  .vimrc.indent
-  .vimrc.lang
 )
 
 for file in ${files[@]}; do
