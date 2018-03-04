@@ -140,6 +140,8 @@ Plug 'Quramy/tsuquyomi'
 Plug 'jwalton512/vim-blade', { 'for': 'php' }
 " fish
 Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+
 call plug#end()
 
 set t_Co=256
