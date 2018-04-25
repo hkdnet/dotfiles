@@ -72,6 +72,7 @@ if [ -d ~/Library/Haskell/bin ]; then
 fi
 
 # editor
+export VISUAL=vim
 export EDITOR=vim
 export BUNDLER_EDITOR=atom
 
