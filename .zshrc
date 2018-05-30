@@ -108,16 +108,6 @@ function peco-select-ghq-repository() {
 zle -N peco-select-ghq-repository
 bindkey '^]' peco-select-ghq-repository
 
-if [ -z "$TMUX" ]; then
-    local session
-    session=$(tmux list-sessions 2>/dev/null | awk -F: '{ print $1 }')
-    if [ -z "$session" ]; then
-        tmux
-    else
-        tmux attach-session -t $session
-    fi
-fi
-
 if [ -d ~/.zsh/completion ]; then
   fpath=(~/.zsh/completion $fpath)
 fi
