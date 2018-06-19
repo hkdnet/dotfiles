@@ -197,6 +197,9 @@ nnoremap <silent> [tagj]b <C-O>
 nnoremap <silent> [tagj]<C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <silent> [tagj]<C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
+" 検索結果のハイライトを消す
+nnoremap <Leader>c :<C-u>noh<Return>
+
 " --------------------------------
 " NeoComplete
 " --------------------------------
