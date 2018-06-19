@@ -649,3 +649,5 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+" digdag
+au BufNewFile,BufRead *.dig setf yaml
