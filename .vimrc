@@ -1,4 +1,6 @@
-source $VIMRUNTIME/defaults.vim
+if filereadable($VIMRUNTIME . "/defaults.vim")
+  source $VIMRUNTIME/defaults.vim
+endif
 
 " --------------------------------
 " 基本設定 Basics
