@@ -111,7 +111,7 @@ bindkey '^]' peco-select-ghq-repository
 if [ -d ~/.zsh/completion ]; then
   fpath=(~/.zsh/completion $fpath)
 fi
-if [ -x brew]; then
+if [ -x brew ]; then
   if [ -d "$(brew --prefix)/share/zsh/site-functions" ]; then
    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
   fi
