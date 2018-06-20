@@ -33,6 +33,6 @@ mkdir -p ~/.config
 
 dotconfigdirs=$(ls .config)
 for dir  in $dotconfigdirs; do
-  rm ~/.config/$dir
+  rm -rf ~/.config/$dir
   ln -sf ${script_dir}/${dir} ~/.config/${dir}
 done
