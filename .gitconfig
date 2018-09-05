@@ -17,8 +17,7 @@
 	interactive = auto
 	grep = auto
 [ghq]
-	root = ~/.ghq
-	root = ~/.go/src
+	root = ~/.ghq/src
 [alias]
 	s   = status
 	st  = status

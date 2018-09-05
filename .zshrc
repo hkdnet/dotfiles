@@ -45,7 +45,7 @@ if [ -x "$(which hub)" ]; then
 fi
 
 # golang
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/.ghq
 export GOENVHOME=$HOME/.goenvs
 export PATH=$PATH:$GOPATH/bin
 
