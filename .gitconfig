@@ -27,6 +27,8 @@
 	po  = push origin
 	c   = commit
 	co  = checkout
+	fu  = fetch upstream
+	fo  = fetch origin
 	# diff関連
 	di = diff
 	dm = diff master           # masterとのdiff
