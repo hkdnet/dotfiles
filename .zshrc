@@ -61,7 +61,7 @@ if [ -e $HOME/.secrets ]; then
 fi
 
 # local bin
-export PATH=$PATH:$HOME/bin
+export PATH=$HOME/bin:$PATH
 
 # dotnet
 export PATH=/usr/local/share/dotnet:$PATH
