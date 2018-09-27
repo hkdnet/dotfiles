@@ -71,6 +71,10 @@ if [ -d ~/Library/Haskell/bin ]; then
   export PATH=$PATH:~/Library/Haskell/bin
 fi
 
+if [ -x /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+fi
+
 # editor
 export VISUAL=vim
 export EDITOR=vim
