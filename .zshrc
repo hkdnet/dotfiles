@@ -46,7 +46,6 @@ fi
 
 # golang
 export GOPATH=$HOME/.ghq
-export GOENVHOME=$HOME/.goenvs
 export PATH=$PATH:$GOPATH/bin
 
 # rust
