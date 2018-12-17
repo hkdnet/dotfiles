@@ -103,6 +103,7 @@ Plug 'kana/vim-textobj-user'
 
 " yaml
 Plug 'stephpy/vim-yaml'
+Plug 'cespare/vim-toml'
 " golang
 Plug 'fatih/vim-go', { 'for': 'go' }
 " rust
