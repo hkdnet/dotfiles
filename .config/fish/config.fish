@@ -38,6 +38,11 @@ if [ -d ~/Library/Haskell/bin ]
   set -x PATH $PATH ~/Library/Haskell/bin
 end
 
+# for opam
+if [ -r ~/.opam/opam-init/init.fish ]
+  source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null || true
+end
+
 # editor
 set -x VISUAL vim
 set -x EDITOR vim
