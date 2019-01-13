@@ -16,3 +16,7 @@ vendor/
 *.hi
 
 .editorconfig
+
+.config/fish
+!.config/fish/config.fish
+!.config/fish/fishfile
