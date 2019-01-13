@@ -120,3 +120,9 @@ if [ -x brew ]; then
   fi
 fi
 autoload -Uz compinit && compinit -i
+
+# for opam
+test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# for merlin
+export OCAMLPARAM="_,bin-annot=1"
+export OPAMKEEPBUILDDIR=1
