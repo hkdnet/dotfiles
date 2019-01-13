@@ -126,3 +126,8 @@ test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2
 # for merlin
 export OCAMLPARAM="_,bin-annot=1"
 export OPAMKEEPBUILDDIR=1
+
+# for deno
+if [ -d "${HOME}/.deno" ]; then
+  export PATH=${HOME}/.deno/bin:$PATH
+fi
