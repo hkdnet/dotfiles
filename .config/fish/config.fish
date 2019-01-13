@@ -85,9 +85,9 @@ end
 
 function fish_prompt
   if [ $status -eq 0 ]
-    set prompt (set_color --bold green white)" | >< '>  "
+    set prompt (set_color green white)" | >< '>  "
   else
-    set prompt (set_color --bold red white)" | >< *>  "
+    set prompt (set_color red white)" | >< x>  "
   end
 
   echo (set_color yellow)(prompt_pwd)$prompt
