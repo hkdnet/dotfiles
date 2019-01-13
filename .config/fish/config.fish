@@ -1,7 +1,7 @@
 # anyenv
 if [ -d $HOME/.anyenv ]
   set -x PATH $HOME/.anyenv/bin $PATH
-  status --is-interactive; and source (anyenv init fish|psub)
+  status --is-interactive; and source (anyenv init - fish|psub)
 end
 
 # direnv
