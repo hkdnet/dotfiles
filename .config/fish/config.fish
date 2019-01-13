@@ -47,6 +47,11 @@ end
 set -x OCAMLPARAM "_,bin-annot=1"
 set -x OPAMKEEPBUILDDIR 1
 
+# for deno
+if [ -d "$HOME/.deno" ]
+  set -x PATH "$HOME/.deno/bin" $PATH
+end
+
 # editor
 set -x VISUAL vim
 set -x EDITOR vim
