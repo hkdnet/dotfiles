@@ -4,6 +4,11 @@ if [ -d $HOME/.anyenv ]
   status --is-interactive; and source (anyenv init fish|psub)
 end
 
+# direnv
+if [ -x "(which direnv)" ]
+  source (direnv hook fish)
+end
+
 # github
 hub alias -s | source
 
