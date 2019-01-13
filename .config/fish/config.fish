@@ -1,7 +1,7 @@
 # anyenv
 if [ -d $HOME/.anyenv ]
   set -x PATH $HOME/.anyenv/bin $PATH
-  anyenv init - | source
+  status --is-interactive; and source (anyenv init fish|psub)
 end
 
 # github
