@@ -78,8 +78,3 @@ function fish_prompt
 
   echo (set_color yellow)(prompt_pwd)$prompt
 end
-
-if [ -z "$TMUX" ]
-  tmux
-end
-
