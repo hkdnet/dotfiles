@@ -32,7 +32,7 @@ done
 mkdir -p ~/.config
 
 dotconfigdirs=$(ls .config)
-for dir  in $dotconfigdirs; do
+for dir in $dotconfigdirs; do
   rm -rf ~/.config/$dir
-  ln -sf ${script_dir}/${dir} ~/.config/${dir}
+  ln -sf ${script_dir}/.config/${dir} ~/.config/${dir}
 done
