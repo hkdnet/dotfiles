@@ -15,7 +15,6 @@ hub alias -s | source
 
 # golang
 set -x GOPATH $HOME/.go
-set -x GOENVHOME $HOME/.goenvs
 set -x PATH $PATH $GOPATH/bin
 
 # rust
