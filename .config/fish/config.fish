@@ -39,6 +39,7 @@ if [ -d ~/Library/Haskell/bin ]
 end
 
 # editor
+set -x VISUAL vim
 set -x EDITOR vim
 set -x BUNDLER_EDITOR vim
 
