@@ -67,6 +67,8 @@ Plug 'wakatime/vim-wakatime'
 Plug 'Shougo/vimfiler'
 Plug 'tyru/open-browser.vim'
 Plug 'szw/vim-tags'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 " Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 Plug 'thinca/vim-ref' | Plug 'mojako/ref-sources.vim'
@@ -274,7 +276,6 @@ let g:neocomplete#sources#omni#input_patterns = {
       \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
       \   "javascript" : '[^. \t]\.\%(\h\w*\)\?',
       \   "php": '[^. \t]->\h\w*\|\h\w*::',
-      \   "go": '\h\w\.\w*',
       \}
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
@@ -569,10 +570,13 @@ endif
 " --------------------------------
 " golang
 " --------------------------------
-
-set rtp+=$GOPATH/misc/vim
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
-set completeopt=menu,preview
+if executable('golsp')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'golsp',
+        \ 'cmd': {server_info->['golsp', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
