@@ -52,6 +52,11 @@ if [ -d "$HOME/.deno" ]
   set -x PATH "$HOME/.deno/bin" $PATH
 end
 
+# llvm
+if brew --prefix llvm 2>&1 1>/dev/null
+  set -x PATH "(brew --prefix llvm)/bin" $PATH
+end
+
 # editor
 set -x VISUAL vim
 set -x EDITOR vim

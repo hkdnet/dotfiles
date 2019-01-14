@@ -131,3 +131,8 @@ export OPAMKEEPBUILDDIR=1
 if [ -d "${HOME}/.deno" ]; then
   export PATH=${HOME}/.deno/bin:$PATH
 fi
+
+# llvm
+if brew --prefix llvm 2>&1 1>/dev/null ; then
+  export PATH="$(brew --prefix llvm)/bin:$PATH"
+fi
