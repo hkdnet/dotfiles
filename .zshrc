@@ -136,3 +136,7 @@ fi
 if brew --prefix llvm 2>&1 1>/dev/null ; then
   export PATH="$(brew --prefix llvm)/bin:$PATH"
 fi
+
+if [ -d "${HOME}/Library/Python/2.7/bin" ]; then
+  export PATH="${HOME}/Library/Python/2.7/bin":$PATH
+fi
