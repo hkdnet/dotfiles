@@ -69,6 +69,10 @@ export PATH=/usr/local/share/dotnet:$PATH
 if [ -d ~/Library/Haskell/bin ]; then
   export PATH=$PATH:~/Library/Haskell/bin
 fi
+if [ -e ~/.ghcup/env ]; then
+  source ~/.ghcup/env
+fi
+
 
 if [ -x /usr/libexec/java_home ]; then
   export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
