@@ -145,6 +145,10 @@ if [ -d "${HOME}/Library/Python/2.7/bin" ]; then
   export PATH="${HOME}/Library/Python/2.7/bin":$PATH
 fi
 
+if [ -d "${HOME}/.local/bin" ]; then
+  export PATH="$PATH:${HOME}/.local/bin"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="~/.sdkman"
 [[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
