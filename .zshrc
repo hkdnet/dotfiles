@@ -81,7 +81,7 @@ fi
 # editor
 export VISUAL=vim
 export EDITOR=vim
-export BUNDLER_EDITOR=atom
+export BUNDLER_EDITOR=vim
 
 alias vi vim
 
