@@ -83,6 +83,22 @@ alias vi vim
 # nvim
 export XDG_CONFIG_HOME=$HOME/.config
 
+# history preference
+setopt BANG_HIST
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt HIST_BEEP
+HISTFILE="$HOME/.zhistory"
+HISTSIZE=10000
+SAVEHIST=10000
+
 # history search by peco
 peco-select-history() {
     BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --layout bottom-up --query "$LBUFFER")
