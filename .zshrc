@@ -170,7 +170,7 @@ export SDKMAN_DIR="~/.sdkman"
 [[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 
 # mzp
-unsetopt prompt_subst;
+# unsetopt prompt_subst;
 
 mzp_preexec() {
 }
@@ -186,4 +186,4 @@ mzp_setup() {
     add-zsh-hook preexec mzp_preexec
 }
 
-mzp_setup
+# mzp_setup
