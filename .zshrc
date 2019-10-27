@@ -163,3 +163,22 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="~/.sdkman"
 [[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+
+# mzp
+unsetopt prompt_subst;
+
+mzp_preexec() {
+}
+
+mzp_precmd() {
+    eval $(mzp)
+}
+
+mzp_setup() {
+    autoload -Uz add-zsh-hook
+
+    add-zsh-hook precmd mzp_precmd
+    add-zsh-hook preexec mzp_preexec
+}
+
+mzp_setup
