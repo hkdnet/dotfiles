@@ -175,19 +175,19 @@ export PATH=$PATH:$HOME/.ghq/src/github.com/flutter/flutter/bin
 
 # mzp
 # unsetopt prompt_subst;
-
-mzp_preexec() {
-}
-
-mzp_precmd() {
-    eval $(mzp)
-}
-
-mzp_setup() {
-    autoload -Uz add-zsh-hook
-
-    add-zsh-hook precmd mzp_precmd
-    add-zsh-hook preexec mzp_preexec
-}
-
+# 
+# mzp_preexec() {
+# }
+# 
+# mzp_precmd() {
+#     eval $(mzp)
+# }
+# 
+# mzp_setup() {
+#     autoload -Uz add-zsh-hook
+# 
+#     add-zsh-hook precmd mzp_precmd
+#     add-zsh-hook preexec mzp_preexec
+# }
+# 
 # mzp_setup
