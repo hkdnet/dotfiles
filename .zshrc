@@ -47,6 +47,7 @@ fi
 # golang
 export GOPATH=$HOME/.ghq
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULES=on
 
 # rust
 export PATH=$PATH:$HOME/.cargo/bin
