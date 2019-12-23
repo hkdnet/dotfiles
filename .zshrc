@@ -170,6 +170,9 @@ fi
 export SDKMAN_DIR="~/.sdkman"
 [[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 
+# flutter
+export PATH=$PATH:$HOME/.ghq/src/github.com/flutter/flutter/bin
+
 # mzp
 # unsetopt prompt_subst;
 
