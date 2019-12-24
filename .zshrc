@@ -154,8 +154,10 @@ if [ -d "${HOME}/.deno" ]; then
 fi
 
 # llvm
-if brew --prefix llvm 2>&1 1>/dev/null ; then
-  export PATH="$(brew --prefix llvm)/bin:$PATH"
+if [ -x brew ]; then
+  if brew --prefix llvm 2>&1 1>/dev/null ; then
+    export PATH="$(brew --prefix llvm)/bin:$PATH"
+  fi
 fi
 
 if [ -d "${HOME}/Library/Python/2.7/bin" ]; then
