@@ -151,6 +151,8 @@ Plug 'jwalton512/vim-blade', { 'for': 'php' }
 " fish
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+" ReasonML
+Plug 'reasonml-editor/vim-reason-plus'
 
 call plug#end()
 
