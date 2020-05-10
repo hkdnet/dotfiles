@@ -175,6 +175,8 @@ export SDKMAN_DIR="~/.sdkman"
 # flutter
 export PATH=$PATH:$HOME/.ghq/src/github.com/flutter/flutter/bin
 
+# export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+
 # mzp
 # unsetopt prompt_subst;
 # 
