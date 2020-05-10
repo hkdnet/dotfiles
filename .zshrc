@@ -195,3 +195,7 @@ export PATH=$PATH:$HOME/.ghq/src/github.com/flutter/flutter/bin
 # }
 # 
 # mzp_setup
+#
+if [ -x "$(which gtimeout)" ]; then
+  alias gtimeout timeout
+fi
