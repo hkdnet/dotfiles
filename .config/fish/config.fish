@@ -1,3 +1,5 @@
+#!/usr/local/bin/fish
+
 # anyenv
 if [ -d $HOME/.anyenv ]
   set -x PATH $HOME/.anyenv/bin $PATH
