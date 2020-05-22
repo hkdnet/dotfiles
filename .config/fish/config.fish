@@ -9,13 +9,20 @@ if [ -x "(which direnv)" ]
   source (direnv hook fish)
 end
 
+# snap
+if [ -d /snap/bin ]
+  set -x PATH /snap/bin $PATH
+end
+
 # github
 hub alias -s | source
 
 
 # golang
-set -x GOPATH $HOME/.go
+set -x GOPATH $HOME/.ghq
 set -x PATH $PATH $GOPATH/bin
+set -x GO111MODULES on
+
 
 # rust
 set -x PATH $PATH $HOME/.cargo/bin
@@ -39,9 +46,9 @@ if [ -d ~/Library/Haskell/bin ]
 end
 
 # for opam
-if [ -r ~/.opam/opam-init/init.fish ]
-  source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null || true
-end
+# if [ -r ~/.opam/opam-init/init.fish ]
+#   source ~/.opam/opam-init/init.fish > /dev/null 2> /dev/null || true
+# end
 
 # for merlin
 set -x OCAMLPARAM "_,bin-annot=1"
@@ -53,8 +60,10 @@ if [ -d "$HOME/.deno" ]
 end
 
 # llvm
-if brew --prefix llvm 2>&1 1>/dev/null
-  set -x PATH "(brew --prefix llvm)/bin" $PATH
+if [ -x brew ]
+  if brew --prefix llvm 2>&1 1>/dev/null
+    set -x PATH "(brew --prefix llvm)/bin" $PATH
+  end
 end
 
 # editor
