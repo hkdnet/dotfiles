@@ -99,12 +99,13 @@ function peco
   command peco --layout=bottom-up $argv
 end
 
-function fish_prompt
-  if [ $status -eq 0 ]
-    set prompt (set_color green white)" | >< '>  "
-  else
-    set prompt (set_color red white)" | >< x>  "
-  end
-
-  echo (set_color yellow)(prompt_pwd)$prompt
-end
+# Use spacefish: https://github.com/matchai/spacefish 
+# function fish_prompt
+#   if [ $status -eq 0 ]
+#     set prompt (set_color green white)" | >< '>  "
+#   else
+#     set prompt (set_color red white)" | >< x>  "
+#   end
+# 
+#   echo (set_color yellow)(prompt_pwd)$prompt
+# end
