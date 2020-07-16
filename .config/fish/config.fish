@@ -99,7 +99,8 @@ function peco
   command peco --layout=bottom-up $argv
 end
 
-# Use spacefish: https://github.com/matchai/spacefish 
+# Use starship: https://github.com/starship/starship
+starship init fish | source
 # function fish_prompt
 #   if [ $status -eq 0 ]
 #     set prompt (set_color green white)" | >< '>  "
