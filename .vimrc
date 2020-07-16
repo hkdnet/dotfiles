@@ -100,6 +100,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'nanotech/jellybeans.vim'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'Rigellute/rigel'
 " textobj
 Plug 'kana/vim-textobj-user'
 
@@ -159,11 +160,12 @@ call plug#end()
 set t_Co=256
 
 set background=dark
-colorscheme lucius
+" colorscheme lucius
 " colorscheme jellybeans
 " colorscheme railscasts
 " colorscheme japanesque
 " colorscheme molokai
+colorscheme rigel
 " ---------------------
 " color: kalisi
 " ---------------------
