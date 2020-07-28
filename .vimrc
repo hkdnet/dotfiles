@@ -8,7 +8,7 @@ endif
 nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
 noremap \ <Space>
-map ; :
+" map ; :
 set encoding=utf-8
 set scrolloff=5                  " スクロール時の余白確保
 set textwidth=0                  " 一行に長い文章を書いていても自動折り返しをしない
