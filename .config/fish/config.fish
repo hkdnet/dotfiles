@@ -36,6 +36,11 @@ if [ -e ~/.secrets.fish ]
   source $HOME/.secrets.fish
 end
 
+# python pip
+if [ -d ~/.local/bin ]
+  set -x PATH $PATH ~/.local/bin
+end
+
 # local bin
 set -x PATH $PATH $HOME/bin
 
@@ -100,6 +105,7 @@ function peco
 end
 
 # Use starship: https://github.com/starship/starship
+#   curl -fsSL https://starship.rs/install.sh | bash
 starship init fish | source
 # function fish_prompt
 #   if [ $status -eq 0 ]
