@@ -25,6 +25,11 @@ set -x GOPATH $HOME/.ghq
 set -x PATH $PATH $GOPATH/bin
 set -x GO111MODULES on
 
+# npm
+if [ -x npm ]
+  set -x PATH $PATH (npm bin -g)
+end
+
 
 # rust
 set -x PATH $PATH $HOME/.cargo/bin
