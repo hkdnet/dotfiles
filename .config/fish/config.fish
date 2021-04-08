@@ -25,14 +25,13 @@ set -x GOPATH $HOME/.ghq
 set -x PATH $PATH $GOPATH/bin
 set -x GO111MODULES on
 
+# rust
+set -x PATH $PATH $HOME/.cargo/bin
+
 # npm
 if [ -x npm ]
   set -x PATH $PATH (npm bin -g)
 end
-
-
-# rust
-set -x PATH $PATH $HOME/.cargo/bin
 
 # alias ta='tmux a -t $(tmux ls -F "#S" | peco)'
 
@@ -83,7 +82,7 @@ set -x VISUAL vim
 set -x EDITOR vim
 set -x BUNDLER_EDITOR vim
 
-alias vi vim
+abbr -a vi vim
 
 function fish_user_key_bindings
   bind \cr peco_select_history
