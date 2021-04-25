@@ -111,6 +111,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " php
 Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
+Plug 'jwalton512/vim-blade', { 'for': 'php' }
 " Dockerfile
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 " crystal
@@ -140,8 +141,6 @@ Plug 'kchmck/vim-coffee-script'
 " typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
-" php
-Plug 'jwalton512/vim-blade', { 'for': 'php' }
 " fish
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
@@ -399,7 +398,6 @@ if has("autocmd")
  autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
  autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
  autocmd FileType go         setlocal noexpandtab ts=4 sts=4 sw=4
- autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
 endif
 
 " --------------------------------
