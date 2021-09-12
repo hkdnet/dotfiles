@@ -20,15 +20,6 @@ for file in ${files[@]}; do
   ln -sf ${script_dir}/${file} ~/${file}
 done
 
-atom=(
-  keymap.cson
-  snippets.cson
-)
-mkdir -p ~/.atom
-for file in ${atom[@]}; do
-  ln -sf ${script_dir}/atom/${file} ~/.atom/${file}
-done
-
 mkdir -p ~/.config
 
 dotconfigdirs=$(ls .config)
