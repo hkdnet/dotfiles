@@ -7,7 +7,7 @@ if [ -d $HOME/.anyenv ]
 end
 
 # direnv
-if [ -x "(which direnv)" ]
+if type -q direnv
   source (direnv hook fish)
 end
 
@@ -17,7 +17,9 @@ if [ -d /snap/bin ]
 end
 
 # github
-hub alias -s | source
+if type -q hub
+  hub alias -s | source
+end
 
 
 # golang
@@ -29,7 +31,7 @@ set -x GO111MODULES on
 set -x PATH $PATH $HOME/.cargo/bin
 
 # npm
-if [ -x npm ]
+if type -q npm
   set -x PATH $PATH (npm bin -g)
 end
 
@@ -71,7 +73,7 @@ if [ -d "$HOME/.deno" ]
 end
 
 # llvm
-if [ -x brew ]
+if type -q brew
   if brew --prefix llvm 2>&1 1>/dev/null
     set -x PATH "(brew --prefix llvm)/bin" $PATH
   end
@@ -110,7 +112,12 @@ end
 
 # Use starship: https://github.com/starship/starship
 #   curl -fsSL https://starship.rs/install.sh | bash
-starship init fish | source
+if type -q starship
+  starship init fish | source
+else
+  echo 'starship is missing! Install via'
+  echo '  curl -fsSL https://starship.rs/install.sh | bash'
+end
 # function fish_prompt
 #   if [ $status -eq 0 ]
 #     set prompt (set_color green white)" | >< '>  "
