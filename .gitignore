@@ -7,6 +7,7 @@ npm-debug.log
 *.rs.fmt
 .ruby-version
 .node-version
+.java-version
 tags
 .idea/
 vendor/
@@ -20,3 +21,6 @@ vendor/
 .config/fish
 !.config/fish/config.fish
 !.config/fish/fishfile
+
+Gemfile.local
+Gemfile.local.lock

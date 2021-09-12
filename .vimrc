@@ -125,7 +125,7 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
+" Plug 'tpope/vim-bundler', { 'for': 'ruby' } " 起動時にエラーが出るのでとりあえず
 Plug 'rhysd/vim-textobj-ruby', { 'for': 'ruby' }
 Plug 'todesking/ruby_hl_lvar.vim', { 'for': 'ruby' }
 Plug 'slim-template/vim-slim'
@@ -500,6 +500,11 @@ endif
 
 " digdag
 au BufNewFile,BufRead *.dig setf yaml
+
+" https://github.com/prabirshrestha/asyncomplete.vim
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
 " let s:opam_share_dir = system("opam config var share")
