@@ -86,40 +86,9 @@ set -x BUNDLER_EDITOR vim
 
 abbr -a vi vim
 
-function peco_select_history
-  if test (count $argv) = 0
-    set peco_flags --layout=bottom-up
-  else
-    set peco_flags --layout=bottom-up --query "$argv"
-  end
-
-  history|peco $peco_flags|read foo
-
-  if [ $foo ]
-    commandline $foo
-  else
-    commandline ''
-  end
-end
-
 function fish_user_key_bindings
   bind \cr peco_select_history
   bind \c] peco_select_ghq_repository
-end
-
-function peco_select_ghq_repository
-  set -l query (commandline)
-
-  if test -n $query
-    set peco_flags --query "$query"
-  end
-
-  ghq list -p | peco $peco_flags | read line
-
-  if [ $line ]
-    cd $line
-    commandline -f repaint
-  end
 end
 
 function peco
@@ -143,18 +112,3 @@ end
 # 
 #   echo (set_color yellow)(prompt_pwd)$prompt
 # end
-
-function load_dotenv
-  set -l file ".env"
-  if test -e $file
-    for line in (cat $file)
-      if ! string match -q -r '^#.*' $line
-        if string match -q -r "\S" $line
-          set -l k  (echo $line | cut -d = -f 1)
-          set -l v (echo $line | cut -d = -f 2-)
-          set -xg $k $v
-        end
-      end
-    end
-  end
-end
