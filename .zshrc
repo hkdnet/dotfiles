@@ -199,3 +199,7 @@ export PATH=$PATH:$HOME/.ghq/src/github.com/flutter/flutter/bin
 if [ -x "$(which gtimeout)" ]; then
   alias gtimeout timeout
 fi
+
+if [ -x "$(which starship)" ]; then
+  eval "$(starship init zsh)"
+fi
