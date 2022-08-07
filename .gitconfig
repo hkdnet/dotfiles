@@ -17,8 +17,6 @@
 	branch = auto
 	interactive = auto
 	grep = auto
-[ghq]
-	root = ~/.ghq/src
 [alias]
 	s = status
 	st = status
