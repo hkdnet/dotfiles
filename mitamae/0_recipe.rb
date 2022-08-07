@@ -46,12 +46,27 @@ package 'make'
 
 directory '/usr/local/bin'
 
-execute 'cd /tmp/ghq && make install && mv ~/go/bin/ghq /usr/local/bin/ghq' do
+
+ghq_install_commands = [
+  'git clone https://github.com/x-motemen/ghq.git /tmp/ghq',
+  'cd /tmp/ghq',
+  'make install',
+  'mv ~/go/bin/ghq /usr/local/bin/ghq',
+]
+
+execute ghq_install_commands.join('&&') do
   not_if 'which ghq'
 end
 
-def ghq(name)
-  execute "ghq get -p #{name}"
+execute "ghq get -p cli/cli"
+
+gh_install_commands = [
+  'cd ~/ghq/github.com/cli/cli',
+  'make install',
+]
+
+execute gh_install_commands.join('&&') do
+  not_if 'which gh'
 end
 
 
