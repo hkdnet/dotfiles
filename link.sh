@@ -6,7 +6,6 @@ cd $script_dir
 
 files=(
   .gitconfig
-  .gitignore
   .tmux.conf
   .zlogin
   .zlogout

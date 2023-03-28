@@ -4,7 +4,6 @@
 [fetch]
 	prune = true
 [core]
-	excludesfile = ~/.gitignore # globalな.gitignoreの指定
 	attributesfile = ~/.gitattributes
 	editor = vim
 	pager = less -r
